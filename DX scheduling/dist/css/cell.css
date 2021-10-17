@@ -1,0 +1,6 @@
+.half-cell-success-right {
+    background-image:linear-gradient(to right, white 50%, #28a745 50%) !important;
+}
+.half-cell-success-left {
+    background-image:linear-gradient(to right, #28a745 50%, white 50%) !important;
+}
