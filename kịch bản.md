@@ -96,8 +96,8 @@
 - (Priority): 
     - Các cấp
         - Thấp ~ Giao hàng tiêu chuẩn
-        - Trung bình ~ Giao hàng nhanh
-        - Cao ~ Giao hàng cấp tốc ??  
+        - Trung bình ~ Giao hàng trung bình
+        - Cao ~ Giao hàng nhanh
 
 ### 2.1 Kịch bản hoạt động đơn lẻ  
 #### 2.1.1. Xử lý đơn  
@@ -117,3 +117,35 @@
 
 #### 2.1.2. Vận chuyển
 ### 2.2 Kịch bản hoạt động tích hợp
+Quản lý đơn hàng
+> Đơn hàng
+> Lịch trình
+    > Lịch trình xử lý: tìm được các lịch đã Lưu
+    > Lịch trình vận chuyển: tìm 
+
+### Trạng thái đơn hàng  
+0 chưa phê duyệt
+1 đã phê duyệt
+2 đã lập lịch xử lý trong kho
+3 đã lập lịch vận chuyển  
+4 đang xử lý trong kho  
+5 đang vận chuyển  
+6 Hoàn thành  
+7 Hủy
+
+nhận xét về phần kho:
+2 loại đơn hàng:
++ nhập hàng
++ xuất hàng  
+Hướng của mình là gì
+giải quyết phần kho của công ty nào: công ty sản xuất hay công ty logistics 
+cần dựng kịch bản:
+ kho + giao hàng: của sản xuất. doanh nghiệp này quan tâm đến việc làm xong thì xuất luôn, công ty làm theo quy trình rất ẩu, đôi khi còn cắt bước.  kho nội đô số khách hàng lớn
+ kho + giao hàng: logistics. không quan tâm về tồn kho vì nó chỉ làm cho thuê kho và vận chuyển hàng hóa cho khách hàng. (GK logistics), xe đường dài tập khách hàng cố định. 
+
+
+ --> cần làm rõ đối tượng để làm tường minh hơn cái flow chart.  
+
+
+ Hồng Anh làm đầu mối vẽ kịch bản 
+ Trung khả năng tích hợp / pá.
