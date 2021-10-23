@@ -52,7 +52,6 @@
 - STT
 - Mã kế hoạch
 - Người tạo
-- Người phê duyệt
 - Ngày tạo
 - Ngày bắt đầu
 - Ngày dự kiến hoàn thành 
