@@ -15,11 +15,15 @@
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
   <!-- cell style -->
   <link rel="stylesheet" href="../dist/css/cell.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
-  <!-- Preloader -->
+    <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div>
@@ -332,308 +336,199 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
+    <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Lập lịch xử lý xuất đơn</h1>
-          </div><!-- /.col -->
+            <h1>Chi tiết đơn hàng 112</h1>
+          </div>
           <div class="col-sm-6">
-          </div><!-- /.col -->
-        </div><!-- /.row -->
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+              <li class="breadcrumb-item active">Bảng dữ liệu</li>
+            </ol>
+          </div>
+        </div>
       </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+    </section>
 
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- Info boxes -->
-
-        <!-- Main row -->
         <div class="row">
-          <!-- Left col -->
-          <div class="col-md-11">
-            <!-- MAP & BOX PANE -->
+          <div class="col-12">
+            <div class="card">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Chi tiết lịch trình</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
+                <h3 class="card-title">Bảng dữ liệu</h3>
               </div>
               <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="d-md-flex">
-                  <div class="p-1 flex-fill" style="overflow: hidden">
-                    <!-- Map will be created here -->
-                    <!-- <div id="world-map-markers" style="height: 325px; overflow: hidden">
-                      <div class="map"></div>
-                    </div> -->
-                    <table class="table table-responsive">
-                      <tr>
-                        <td><center>Đơn hàng</center></td>
-                        <td><center></center>Chi phí xử lý (VNĐ)</center></td>
-                        <td><center>Thời gian<br>(phút)</center></td>
-                        <td><center>Ngày bắt đầu</center></td>
-                        <td><center>Ngày kết thúc</center></td>
-                        <td><center>Nhân viên tham gia</center></td>
-                      </tr>
-                      <!-- HD0962 -->
-                      <tr>
-                        <td>HD0962</td>
-                        <td>10.000.000</td>
-                        <td><center>210</center></td>
-                        <td><center>07/10/2021 08:00:00</center></td>
-                        <td><center>07/10/2021 12:00:00</center></td>
-                        <td>Nguyễn Thị Hồng Anh, Phạm Lê Đức, Nguyễn Hòng Ánh, Nguyễn Trí Hùng</td>
-                      </tr>
-                      <!-- SH0021 -->
-                      <tr>
-                        <td>SH0021</td>
-                        <td>15.000.000</td>
-                        <td><center>420</center></td>
-                        <td><center>07/10/2021 08:00:00</center></td>
-                        <td><center>07/10/2021 12:30:00</center></td>
-                        <td>Nguyễn Thị Hồng Anh, Nguyễn Mạnh Phúc, Nguyễn Hồng Ánh, Nguyễn Khánh Linh, Nguyễn Trí Hùng</td>
-                      </tr>
-                      <tr>
-                        <!-- CB0005 -->
-                        <td>CB0005</td>
-                        <td>12.000.000</td>
-                        <td><center>210</center></td>
-                        <td><center>07/10/2021 08:00:00</center></td>
-                        <td><center>07/10/2021 11:00:00</center></td>
-                        <td>Nguyễn Khánh Linh, Nguyễn Trí Hùng, Trần Phi Hùng</td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="card-pane-right bg-success pt-2 pb-2 pl-4 pr-4">
-                    <div class="description-block mb-4">
-                      <h5 class="description-header">840 phút</h5>
-                      <span class="description-text">Tổng thời gian</span>
-                    </div>
-                    <!-- /.description-block -->
-                    <div class="description-block mb-4">
-                      <!-- <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div> -->
-                      <h5 class="description-header">37.000.000VNĐ</h5>
-                      <span class="description-text">Tổng chi phí</span>
-                    </div>
-                    <!-- /.description-block -->
-                    <div class="description-block">
-                      <!-- <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div> -->
-                      <h5 class="description-header">07/10/2021</h5>
-                      <span class="description-text">Ngày hoàn thành</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div><!-- /.card-pane-right -->
-                </div><!-- /.d-md-flex -->
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-            <div class="row">
-              <!-- /.col -->
-            </div>
-            <!-- /.row -->
-
-
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-
-          <div class="col-md-1">
-            <!-- Info Boxes Style 2 -->
-            <div class="info-box mb-3 bg-warning">
-              <span class="info-box-icon"><i class="fas fa-book"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">HD0962</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-success">
-              <span class="info-box-icon"><i class="fas fa-book"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">SH0021</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-danger">
-              <span class="info-box-icon"><i class="fas fa-book"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">CB005</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-
-          </div>
-          <!-- /.col -->
-        </div>
-        <div class="row">
-          <!-- TABLE: LATEST ORDERS -->
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Lịch trình #1</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                  <table class="table m-0">
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                      <th>Nhân viên</th>
-                      <th>8:00:00</th>
-                      <th>8:30:00</th>
-                      <th>9:00:00</th>
-                      <th>9:30:00</th>
-                      <th>10:00:00</th>
-                      <th>10:30:00</th>
-                      <th>11:00:00</th>
-                      <th>11:30:00</th>
-                      <th>12:00:00</th>
+                        <th>Mã sản phẩm</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Kích thước(m/m/m)</th>
+                        <th>Giá thành</th>
+                        <th>Số lượng</th>
+                        <th>Nhóm hàng</th>
+                        <th>Trạng thái</th>
+                        <th>Thao tác</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                      <td>Nguyễn Thị Hồng Anh</td>
-                      <td class="bg-warning">Task #1</td>
-                      <td class="half-cell-success-right"></td>
-                      <td class="bg-success">Task #2</td>
-                      <td></td>
-                      <td class="bg-warning">Task #5</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                        <td>111</td>
+                        <td>Bánh trung thu</td>
+                        <td>0.1/0.6/0.2</td>
+                        <td>60.000</td>
+                        <td>12</td>
+                        <td>Đồ ăn</td>
+                        <td>
+                            <p style="background-color: green; color: white;
+                                        border-radius: 10%; padding: 5%; width: 60%;
+                                        text-align: center; height: 30px; margin: auto;">
+                                Đạt
+                            </p>
+                        </td>
+                        <td style="display: flex;">
+                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                Edit
+                            </button>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
                     </tr>
                     <tr>
-                      <td>Phạm Lê Đức</td>
-                      <td></td>
-                      <td></td>
-                      <td class="bg-warning">Task #3</td>
-                      <td></td>
-                      <td></td>
-                      <td class="bg-warning">Task #6</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                        <td>111</td>
+                        <td>Bánh bông lan</td>
+                        <td>0.1/0.6/0.2</td>
+                        <td>60.000</td>
+                        <td>12</td>
+                        <td>Đồ ăn</td>
+                        <td>
+                            <p style="background-color: green; color: white;
+                                        border-radius: 10%; padding: 5%; width: 60%;
+                                        text-align: center; height: 30px; margin: auto;">
+                                Đạt
+                            </p>
+                        </td>
+                        <td style="display: flex;">
+                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                Edit
+                            </button>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
                     </tr>
                     <tr>
-                      <td>Nguyễn Mạnh Phúc</td>
-                      <td class="bg-success">Task #1</td>
-                      <td class="half-cell-success-left"></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>Nguyễn Hồng Ánh</td>
-                      <td></td>
-                      <td class="bg-warning">Task #2</td>
-                      <td></td>
-                      <td></td>
-                      <td class="half-cell-success-right"></td>
-                      <td class="bg-success">Task #4</td>
-                      <td class="bg-warning">Task #7</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>Nguyễn Khánh Linh</a></td>
-                      <td class="bg-danger">Task #1</td>
-                      <td></td>
-                      <td></td>
-                      <td class="bg-success">Task #3</td>
-                      <td class="half-cell-success-left"></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>Nguyễn Trí Hùng</a></td>
-                      <td></td>
-                      <td class="bg-danger">Task #2</td>
-                      <td class="bg-danger">Task #3</td>
-                      <td class="bg-warning">Task #4</td>
-                      <td></td>
-                      <td></td>
-                      <td class="bg-success">Task #5</td>
-                      <td class="half-cell-success-left"></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>Trần Phi Hùng</a></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td class="bg-danger">Task #4</td>
-                      <td class="bg-danger">Task #5</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                        <td>111</td>
+                        <td>Bánh chocopie</td>
+                        <td>0.1/0.6/0.2</td>
+                        <td>60.000</td>
+                        <td>12</td>
+                        <td>Đồ ăn</td>
+                        <td>
+                            <p style="background-color: rgb(168, 6, 6); color: white;
+                                        border-radius: 10%; padding: 5%; width: 60%;
+                                        text-align: center; height: 30px; margin: auto;">
+                                Lỗi
+                            </p>
+                        </td>
+                        <td style="display: flex;">
+                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                Edit
+                            </button>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
                     </tr>
                     </tbody>
-                  </table>
+                    <tfoot>
+                    <tr>
+                        <th>Mã sản phẩm</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Kích thước(m/m/m)</th>
+                        <th>Giá thành</th>
+                        <th>Số lượng</th>
+                        <th>Nhóm hàng</th>
+                        <th>Trạng thái</th>
+                        <th>Thao tác</th>
+                    </tr>
+                    </tfoot>
+                </table>
+              </div>
+              <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Chi tiết sản phẩm</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Mã sản phẩm</label>
+                                    <input type="text" class="form-control" placeholder="MSP3111" value="111">
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="inputPassword4">Tên sản phẩm</label>
+                                    <input type="text" class="form-control" value="Bánh trung thu">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="inputAddress">Kích thước</label>
+                                  <input type="text" class="form-control" id="inputAddress" placeholder="dài/rộng/cao(m)" value="0.1/0.6/0.2">
+                                </div>
+                                <div class="form-group">
+                                  <label for="inputAddress2">Giá thành</label>
+                                  <input type="text" class="form-control" id="inputAddress2" placeholder="100.000đ" value="60000">
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label for="inputCity">Nhóm hàng</label>
+                                    <select id="inputGroupGood" class="form-control">
+                                        <option selected>Đồ gia dụng</option>
+                                        <option>Đồ nội thất</option>
+                                        <option>Đồ ăn</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputState">Trạng thái</label>
+                                    <select id="inputState" class="form-control">
+                                      <option selected>Đạt chuẩn</option>
+                                      <option>Lỗi</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-2">
+                                    <label for="inputZip">Số lượng</label>
+                                    <input type="number" class="form-control" value="12">
+                                  </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+                        <button type="button" class="btn btn-primary">Lưu</button>
+                        </div>
+                    </div>
+                    </div>
                 </div>
-                <!-- /.table-responsive -->
-              </div>
               <!-- /.card-body -->
-              <div class="card-footer clearfix">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Lưu lịch trình</a>
-                <a href="create-route.html" class="btn btn-sm btn-success float-left" style="margin-left: 1%">Tạo lộ trình</a>
-                <a href="schedule-plans.html" class="btn btn-sm btn-secondary float-right">Đóng</a>
-              </div>
-              <!-- /.card-footer -->
             </div>
+            <!-- /.card -->
           </div>
+          <!-- /.col -->
         </div>
         <!-- /.row -->
-      </div><!--/. container-fluid -->
+      </div>
+      <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
   <footer class="main-footer">
@@ -652,6 +547,19 @@
 <!-- Bootstrap -->
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- overlayScrollbars -->
+<!-- DataTables  & Plugins -->
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../plugins/jszip/jszip.min.js"></script>
+<script src="../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.js"></script>
@@ -669,5 +577,29 @@
 <script src="../dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../dist/js/pages/dashboard2.js"></script>
+
+<!-- Page specific script -->
+<script>
+    $(function () {
+      $("#example1").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+      });
+    });
+</script>
+<script type="text/javascript">
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    });
+</script>
 </body>
 </html>
