@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- font awesome online -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -208,6 +210,50 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Quản lý đơn hàng
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="input-order.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Đơn nhập</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pending-orders.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lập lịch xử lý xuất đơn</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lập lịch vận chuyển</p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="create-route.html" class="nav-link">
+                      <span>&nbsp;&nbsp;&nbsp;</span>
+                      <i class="fa-solid fa-route nav-icon"></i>
+                      <p>Khởi tạo lộ trình</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="route-list.html" class="nav-link" style="padding-left: 12%;">
+                      <i class="far fa-solid fa-list nav-icon"></i>
+                      <p>Danh sách lộ trình</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Tuỳ chỉnh thông tin
@@ -239,85 +285,24 @@
                   <p>Thông tin sản phẩm</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="product-groups.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Thông tin nhóm hàng</p>
-                </a>
-              </li>
             </ul>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                KPI nhân viên
+                Quản lý nhân viên
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="employees.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard KPI</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Khởi tạo KPI cá nhân</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Quản lý KPI cá nhân</p>
+                  <p>Danh sách nhân viên</p>
                 </a>
               </li>
 
-            </ul>
-          </li> -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Quản lý đơn hàng
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="input-order.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Đơn nhập</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pending-orders.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Lập lịch xử lý xuất đơn</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Lập lịch vận chuyển</p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="create-route.html" class="nav-link">
-                      <i class="far nav-icon"></i>
-                      <p>Khởi tạo lộ trình</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="route-list.html" class="nav-link">
-                      <i class="far nav-icon"></i>
-                      <p>Danh sách lộ trình</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
             </ul>
           </li>
         </ul>
@@ -333,8 +318,8 @@
   </aside>
   <!-- /.control-sidebar -->
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+ <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -389,10 +374,10 @@
                         <td>7000000</td>
                         <td>20-10-2021</td>
                         <td style="display: flex;">
-                          <a href="route.html"><button class="btn btn-primary btn-sm">Detail</button></a>
-                          <button class="btn btn-danger btn-sm">Delete</button>
+                          <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                          <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                           <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal">
-                            Bind
+                            <i class="fa-solid fa-van-shuttle"></i>
                           </button>
                         </td>
                     </tr>
@@ -406,10 +391,10 @@
                       <td>7000000</td>
                       <td>20-10-2021</td>
                       <td style="display: flex;">
-                          <a href="route.html"><button class="btn btn-primary btn-sm">Detail</button></a>
-                          <button class="btn btn-danger btn-sm">Delete</button>
-                          <button class="btn btn-success btn-sm">Unbind</button>
-                        </td>
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
                   </tr>
                   </tbody>
                   <tfoot>
@@ -438,7 +423,7 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      
+
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
@@ -514,23 +499,9 @@
     $(function () {
       $("#example1").DataTable({
         "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        "buttons": ["excel", "pdf", "print", "colvis"]
       }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-      });
     });
-</script>
-<script type="text/javascript">
-  $('#myModal').on('shown.bs.modal', function () {
-      $('#myInput').trigger('focus')
-  });
 </script>
 </body>
 </html>

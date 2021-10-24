@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- font awesome online -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -364,6 +366,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
+                <Button class="btn btn-sm btn-success button-themmoi">Thêm mới</Button>
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -386,17 +389,15 @@
                         <td>12</td>
                         <td>Đồ ăn</td>
                         <td>
-                            <p style="background-color: green; color: white;
-                                        border-radius: 10%; padding: 5%; width: 60%;
-                                        text-align: center; height: 30px; margin: auto;">
+                            <p style="color: green; text-align: center; font-size: 17px;">
                                 Đạt
                             </p>
                         </td>
                         <td style="display: flex;">
-                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
-                                Edit
-                            </button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
+                          <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                          </button>
+                          <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                     <tr>
@@ -407,17 +408,15 @@
                         <td>12</td>
                         <td>Đồ ăn</td>
                         <td>
-                            <p style="background-color: green; color: white;
-                                        border-radius: 10%; padding: 5%; width: 60%;
-                                        text-align: center; height: 30px; margin: auto;">
-                                Đạt
-                            </p>
+                          <p style="color: green; text-align: center; font-size: 17px;">
+                            Đạt
+                        </p>
                         </td>
                         <td style="display: flex;">
                             <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
-                                Edit
+                              <i class="fa-solid fa-pen-to-square"></i>
                             </button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
+                            <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                     <tr>
@@ -428,17 +427,15 @@
                         <td>12</td>
                         <td>Đồ ăn</td>
                         <td>
-                            <p style="background-color: rgb(168, 6, 6); color: white;
-                                        border-radius: 10%; padding: 5%; width: 60%;
-                                        text-align: center; height: 30px; margin: auto;">
-                                Lỗi
-                            </p>
+                          <p style="color: red; text-align: center; font-size: 17px;">
+                            Lỗi
+                        </p>
                         </td>
                         <td style="display: flex;">
-                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
-                                Edit
-                            </button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
+                          <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                          </button>
+                          <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                     </tbody>

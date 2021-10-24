@@ -15,15 +15,14 @@
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
   <!-- cell style -->
   <link rel="stylesheet" href="../dist/css/cell.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- font awesome online -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <link rel="stylesheet" href="../plugins/sweetalert2/sweetalert2.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
-    <!-- Preloader -->
+  <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div>
@@ -208,6 +207,50 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Quản lý đơn hàng
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="input-order.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Đơn nhập</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pending-orders.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lập lịch xử lý xuất đơn</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lập lịch vận chuyển</p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="create-route.html" class="nav-link">
+                      <span>&nbsp;&nbsp;&nbsp;</span>
+                      <i class="fa-solid fa-route nav-icon"></i>
+                      <p>Khởi tạo lộ trình</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="route-list.html" class="nav-link" style="padding-left: 12%;">
+                      <i class="far fa-solid fa-list nav-icon"></i>
+                      <p>Danh sách lộ trình</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Tuỳ chỉnh thông tin
@@ -239,85 +282,24 @@
                   <p>Thông tin sản phẩm</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="product-groups.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Thông tin nhóm hàng</p>
-                </a>
-              </li>
             </ul>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                KPI nhân viên
+                Quản lý nhân viên
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="employees.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard KPI</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Khởi tạo KPI cá nhân</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Quản lý KPI cá nhân</p>
+                  <p>Danh sách nhân viên</p>
                 </a>
               </li>
 
-            </ul>
-          </li> -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Quản lý đơn hàng
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="input-order.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Đơn nhập</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pending-orders.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Lập lịch xử lý xuất đơn</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Lập lịch vận chuyển</p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="create-route.html" class="nav-link">
-                      <i class="far nav-icon"></i>
-                      <p>Khởi tạo lộ trình</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="route-list.html" class="nav-link">
-                      <i class="far nav-icon"></i>
-                      <p>Danh sách lộ trình</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
             </ul>
           </li>
         </ul>
@@ -332,61 +314,58 @@
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Khởi tạo lộ trình</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Bảng dữ liệu</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Lựa chọn hình thức khởi tạo</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <p>
-                    <strong>Tạo nhanh: </strong><span>Các tham số được tự động cấu hình</span>
-                </p>
-                <p>
-                    <strong>Tuỳ chỉnh: </strong><span>Có thể tuỳ biến các tham số thuật toán</span>
-                </p>
-                <hr>
-                <a href="confirm-create-route.html"><button class="btn btn-success">Tạo nhanh</button></a>
-                <a href="route-algorithm-configuration.html"><button class="btn btn-warning">Tuỳ chỉnh</button></a>
+<!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Khởi tạo lộ trình</h1>
             </div>
-              <!-- /.card-body -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                <li class="breadcrumb-item active">Bảng dữ liệu</li>
+                </ol>
             </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+            </div>
+        </div><!-- /.container-fluid -->
+        </section>
 
+        <!-- Main content -->
+        <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-12">
+                <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Lựa chọn hình thức khởi tạo</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <p>
+                        <strong>Tạo nhanh: </strong><span>Các tham số được tự động cấu hình</span>
+                    </p>
+                    <p>
+                        <strong>Tuỳ chỉnh: </strong><span>Có thể tuỳ biến các tham số thuật toán</span>
+                    </p>
+                    <hr>
+                    <button type="button" class="btn btn-outline-success" id="quick-create-btn">Tạo nhanh</button></a>
+                    <a href="route-algorithm-configuration.html"><button type="button" class="btn btn-outline-secondary">Tuỳ chỉnh</button></a>
+                </div>
+                <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
   <!-- Main Footer -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
@@ -404,19 +383,6 @@
 <!-- Bootstrap -->
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- overlayScrollbars -->
-<!-- DataTables  & Plugins -->
-<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="../plugins/jszip/jszip.min.js"></script>
-<script src="../plugins/pdfmake/pdfmake.min.js"></script>
-<script src="../plugins/pdfmake/vfs_fonts.js"></script>
-<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.js"></script>
@@ -434,24 +400,26 @@
 <script src="../dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../dist/js/pages/dashboard2.js"></script>
-
-<!-- Page specific script -->
-<script>
-    $(function () {
-      $("#example1").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-      });
-    });
+<script src="../plugins/sweetalert2/sweetalert2.all.min.js"></script>
+<script type="text/javascript">
+  $('#quick-create-btn').on('click', function(){
+    Swal.fire({
+      text: 'Bạn có chắc chắn muốn khởi tạo nhanh, quá trình khởi tạo có thể mất vài phút?',
+      icon: 'warning',
+      showDenyButton: false,
+      showCancelButton: true,
+      confirmButtonText: 'Xác nhận',
+      denyButtonText: `Don't save`,
+      cancelButtonText: `Huỷ`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        window.location.href = "http://localhost:5500/Techfest/DX%20scheduling/UI-demo/route.html";
+      } else if (result.isDenied) {
+        Swal.fire('Changes are not saved', '', 'info')
+      }
+    })
+  });
 </script>
 </body>
 </html>

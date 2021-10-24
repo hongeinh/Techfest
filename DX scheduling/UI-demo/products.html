@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- font awesome online -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -208,6 +210,50 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Quản lý đơn hàng
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="input-order.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Đơn nhập</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pending-orders.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lập lịch xử lý xuất đơn</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lập lịch vận chuyển</p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="create-route.html" class="nav-link">
+                      <span>&nbsp;&nbsp;&nbsp;</span>
+                      <i class="fa-solid fa-route nav-icon"></i>
+                      <p>Khởi tạo lộ trình</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="route-list.html" class="nav-link" style="padding-left: 12%;">
+                      <i class="far fa-solid fa-list nav-icon"></i>
+                      <p>Danh sách lộ trình</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Tuỳ chỉnh thông tin
@@ -239,85 +285,24 @@
                   <p>Thông tin sản phẩm</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="product-groups.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Thông tin nhóm hàng</p>
-                </a>
-              </li>
             </ul>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                KPI nhân viên
+                Quản lý nhân viên
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="employees.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard KPI</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Khởi tạo KPI cá nhân</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Quản lý KPI cá nhân</p>
+                  <p>Danh sách nhân viên</p>
                 </a>
               </li>
 
-            </ul>
-          </li> -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Quản lý đơn hàng
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="input-order.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Đơn nhập</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pending-orders.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Lập lịch xử lý xuất đơn</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Lập lịch vận chuyển</p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="create-route.html" class="nav-link">
-                      <i class="far nav-icon"></i>
-                      <p>Khởi tạo lộ trình</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="route-list.html" class="nav-link">
-                      <i class="far nav-icon"></i>
-                      <p>Danh sách lộ trình</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
             </ul>
           </li>
         </ul>
@@ -365,120 +350,180 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-                    <tr>
-                        <th>Mã sản phẩm</th>
-                        <th>Tên sản phẩm</th>
-                        <th>Kích thước(m/m/m)</th>
-                        <th>Ngày nhập hàng</th>
-                        <th>Giá thành</th>
-                        <th>Số lượng</th>
-                        <th>Nhóm hàng</th>
-                        <th>Vị trí</th>
-                        <th>Thao tác</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                        <td>111</td>
-                        <td>Bánh bông lan</td>
-                        <td>0.1/0.6/0.2</td>
-                        <td>12/12/2021 08:40</td>
-                        <td>60.000</td>
-                        <td>12</td>
-                        <td>Đồ ăn</td>
-                        <td>
-                          kho BK1
-                        </td>
-                        <td style="display: flex;">
-                            <button class="btn btn-primary btn-sm">Detail</button>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>111</td>
-                        <td>Chảo chống dính</td>
-                        <td>0.1/0.6/0.2</td>
-                        <td>12/12/2021 08:40</td>
-                        <td>60.000</td>
-                        <td>12</td>
-                        <td>Đồ gia dụng</td>
-                        <td>
-                          kho BK2
-                        </td>
-                        <td style="display: flex;">
-                            <button class="btn btn-primary btn-sm">Detail</button>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>111</td>
-                        <td>Máy giặt</td>
-                        <td>0.1/0.6/0.2</td>
-                        <td>12/12/2021 08:40</td>
-                        <td>60.000</td>
-                        <td>12</td>
-                        <td>Đồ gia dụng</td>
-                        <td>
-                          kho BK1
-                        </td>
-                        <td style="display: flex;">
-                            <button class="btn btn-primary btn-sm">Detail</button>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>111</td>
-                        <td>Mít sấy</td>
-                        <td>0.1/0.6/0.2</td>
-                        <td>12/12/2021 08:40</td>
-                        <td>60.000</td>
-                        <td>12</td>
-                        <td>Đồ ăn</td>
-                        <td>
-                          kho BK1
-                        </td>
-                        <td style="display: flex;">
-                            <button class="btn btn-primary btn-sm">Detail</button>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>111</td>
-                        <td>Bánh bông lan</td>
-                        <td>0.1/0.6/0.2</td>
-                        <td>12/12/2021 08:40</td>
-                        <td>60.000</td>
-                        <td>12</td>
-                        <td>Đồ ăn</td>
-                        <td>
-                          kho BK1
-                        </td>
-                        <td style="display: flex;">
-                            <button class="btn btn-primary btn-sm">Detail</button>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                        <th>Mã sản phẩm</th>
-                        <th>Tên sản phẩm</th>
-                        <th>Kích thước(m/m/m)</th>
-                        <th>Ngày nhập hàng</th>
-                        <th>Giá thành</th>
-                        <th>Số lượng</th>
-                        <th>Nhóm hàng</th>
-                        <th>Vị trí</th>
-                        <th>Thao tác</th>
-                    </tr>
-                  </tfoot>
+                    <thead>
+                      <tr>
+                          <th>Mã sản phẩm</th>
+                          <th>Tên sản phẩm</th>
+                          <th>Kích thước(m/m/m)</th>
+                          <th>Ngày nhập hàng</th>
+                          <th>Giá thành</th>
+                          <th>Số lượng</th>
+                          <th>Nhóm hàng</th>
+                          <th>Vị trí</th>
+                          <th>Thao tác</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                          <td>111</td>
+                          <td>Bánh bông lan</td>
+                          <td>0.1/0.6/0.2</td>
+                          <td>12/12/2021 08:40</td>
+                          <td>60.000</td>
+                          <td>12</td>
+                          <td>Đồ ăn</td>
+                          <td>
+                            kho BK1
+                          </td>
+                          <td style="display: flex;">
+                            <button class="btn btn-warning btn-sm" type="button" data-toggle="modal" data-target="#exampleModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>111</td>
+                          <td>Chảo chống dính</td>
+                          <td>0.1/0.6/0.2</td>
+                          <td>12/12/2021 08:40</td>
+                          <td>60.000</td>
+                          <td>12</td>
+                          <td>Đồ gia dụng</td>
+                          <td>
+                            kho BK2
+                          </td>
+                          <td style="display: flex;">
+                            <button class="btn btn-warning btn-sm" type="button" data-toggle="modal" data-target="#exampleModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>111</td>
+                          <td>Máy giặt</td>
+                          <td>0.1/0.6/0.2</td>
+                          <td>12/12/2021 08:40</td>
+                          <td>60.000</td>
+                          <td>12</td>
+                          <td>Đồ gia dụng</td>
+                          <td>
+                            kho BK1
+                          </td>
+                          <td style="display: flex;">
+                            <button class="btn btn-warning btn-sm" type="button" data-toggle="modal" data-target="#exampleModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>111</td>
+                          <td>Mít sấy</td>
+                          <td>0.1/0.6/0.2</td>
+                          <td>12/12/2021 08:40</td>
+                          <td>60.000</td>
+                          <td>12</td>
+                          <td>Đồ ăn</td>
+                          <td>
+                            kho BK1
+                          </td>
+                          <td style="display: flex;">
+                            <button class="btn btn-warning btn-sm" type="button" data-toggle="modal" data-target="#exampleModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>111</td>
+                          <td>Bánh bông lan</td>
+                          <td>0.1/0.6/0.2</td>
+                          <td>12/12/2021 08:40</td>
+                          <td>60.000</td>
+                          <td>12</td>
+                          <td>Đồ ăn</td>
+                          <td>
+                            kho BK1
+                          </td>
+                          <td style="display: flex;">
+                            <button class="btn btn-warning btn-sm" type="button" data-toggle="modal" data-target="#exampleModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                          </td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                          <th>Mã sản phẩm</th>
+                          <th>Tên sản phẩm</th>
+                          <th>Kích thước(m/m/m)</th>
+                          <th>Ngày nhập hàng</th>
+                          <th>Giá thành</th>
+                          <th>Số lượng</th>
+                          <th>Nhóm hàng</th>
+                          <th>Vị trí</th>
+                          <th>Thao tác</th>
+                      </tr>
+                    </tfoot>
                 </table>
+              </div>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Chi tiết sản phẩm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputEmail4">Mã sản phẩm</label>
+                                <input type="text" class="form-control" placeholder="MSP...." value="MSP1212fFaa">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputPassword4">Tên sản phẩm</label>
+                                <input type="text" class="form-control" placeholder="MKH..." value="Bánh bông lan">
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputPassword4">Mã khách hàng</label>
+                                <input type="text" class="form-control" placeholder="MKH..." value="MKHUOEOQ41341">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress">Kích thước(m/m/m)</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="" value="0.1/0.6/0.2">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputAddress2">Ngày nhập </label>
+                              <input type="text" class="form-control" id="inputAddress2" placeholder="...." value="12/12/2021 08:40">
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress2">Giá thành</label>
+                                <input type="text" class="form-control" id="inputAddress2" placeholder="nghìn đồng" value="60">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress2">Số lượng</label>
+                                <input type="number" class="form-control" id="inputAddress2" placeholder="" value="12">
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress2">Nhóm hàng</label>
+                                <select class="custom-select">
+                                  <option selected>Đồ ăn</option>
+                                  <option value="1">Đồ gia dụng</option>
+                                  <option value="2">Đồ gỗ</option>
+                                </select>
+                              </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+                    <button type="button" class="btn btn-primary">Lưu</button>
+                    </div>
+                </div>
+                </div>
               </div>
               <!-- /.card-body -->
             </div>
@@ -547,17 +592,8 @@
     $(function () {
       $("#example1").DataTable({
         "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        "buttons": ["excel", "pdf", "print", "colvis"]
       }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-      });
     });
 </script>
 </body>
