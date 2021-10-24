@@ -4,3 +4,12 @@
 .half-cell-success-left {
     background-image:linear-gradient(to right, #28a745 50%, white 50%) !important;
 }
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20rem; }
+.toggle.ios .toggle-handle { border-radius: 20rem; }
+.input-coban {
+    margin-left: 15%;
+    margin-top: 7px;
+}
+.button-themmoi {
+    float: right;
+}
