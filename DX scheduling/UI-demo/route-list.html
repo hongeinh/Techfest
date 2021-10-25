@@ -367,10 +367,10 @@
                     <tr>
                         <td>1</td>
                         <td>R1</td>
-                        <td></td>
+                        <td><span id="result-employ"></span></td>
                         <td>0.8</td>
                         <td>7200000</td>
-                        <td>6</td>
+                        <td>3</td>
                         <td>7000000</td>
                         <td>20-10-2021</td>
                         <td style="display: flex;">
@@ -384,10 +384,10 @@
                     <tr>
                       <td>2</td>
                       <td>R1</td>
-                      <td>Cong 1</td>
+                      <td>Lê Văn Công</td>
                       <td>0.8</td>
                       <td>7200000</td>
-                      <td>6</td>
+                      <td>1</td>
                       <td>7000000</td>
                       <td>20-10-2021</td>
                       <td style="display: flex;">
@@ -423,11 +423,74 @@
                       </button>
                     </div>
                     <div class="modal-body">
-
+                      <table id="list-employ" class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th>STT</th>
+                            <th>Mã nhân viên</th>
+                            <th>Tên nhân viên</th>
+                            <th>Trạng thái</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody style="text-align: center" class="employees-list">
+                          <tr>
+                            <td>1</td>
+                            <td>NVHOAHDOU311</td>
+                            <td class="name-employ">Lê Hoàng Anh Trung</td>
+                            <td style="text-align: center; color: green;">Sẵn sàng</td>
+                            <th><input type="checkbox" name= "check_all" class="chk"/></th>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>NVHOAHDOU311</td>
+                            <td class="name-employ">Lưu Tiến Thái</td>
+                            <td style="text-align: center; color: green;">Sẵn sàng</td>
+                            <th><input type="checkbox" name= "check_all" class="chk"/></th>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>NVHOAHDOU311</td>
+                            <td class="name-employ">Đặng Công Tiến</td>
+                            <td style="text-align: center; color: green;">Sẵn sàng</td>
+                            <td><input type="checkbox" name="nv1" class="chk"></td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>NVHOAHDOU311</td>
+                            <td class="name-employ">Vũ Xuân Chiến</td>
+                            <td style="text-align: center; color: green;">Sẵn sàng</td>
+                            <th><input type="checkbox" name= "check_all" class="chk"/></th>
+                          </tr>
+                          <tr>
+                            <td>5</td>
+                            <td>NVHOAHDOU311</td>
+                            <td class="name-employ">Phùng Ngọc Minh</td>
+                            <td style="text-align: center; color: green;">Sẵn sàng</td>
+                            <th><input type="checkbox" name= "check_all" class="chk"/></th>
+                          </tr>
+                          <tr>
+                            <td>6</td>
+                            <td>NVHOAHDOU311</td>
+                            <td class="name-employ">Đăng Quang Linh</td>
+                            <td style="text-align: center; color: green;">Sẵn sàng</td>
+                            <th><input type="checkbox" name= "check_all" class="chk"/></th>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th>STT</th>
+                            <th>Mã nhân viên</th>
+                            <th>Tên nhân viên</th>
+                            <th>Trạng thái</th>
+                            <th></th>
+                          </tr>
+                        </tfoot>
+                    </table>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                      <button type="button" class="btn btn-primary">Xác nhận</button>
+                      <button type="button" class="btn btn-primary" id="confirm-select-em" data-dismiss="modal">Xác nhận</button>
                     </div>
                   </div>
                 </div>
@@ -496,12 +559,19 @@
 
 <!-- Page specific script -->
 <script>
-    $(function () {
-      $("#example1").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["excel", "pdf", "print", "colvis"]
-      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    });
+  $('#confirm-select-em').on('click', function(){
+    var tableData = "";
+    $("#list-employ tbody tr").each(function(){
+      var currentRow = $(this);
+      if (currentRow.find(".chk").is(":checked")){
+        var name = currentRow.find("td:eq(2)").html();
+        tableData = tableData + name + ",\t";
+      }
+    })
+    tableData = tableData.slice(0, tableData.length - 2);
+    console.log(tableData);
+    $('#result-employ').html(tableData);
+  })
 </script>
 </body>
 </html>
