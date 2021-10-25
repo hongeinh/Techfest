@@ -447,11 +447,11 @@
                         <td><input type="checkbox" name="name1" />&nbsp;</td>
                       </tr>
                     </tbody>
-                  </table>
+                </table>
               </div>
               <!-- Modal -->
               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
+                <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Tạo mới đơn hàng</h5>
@@ -464,36 +464,113 @@
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="inputEmail4">Mã đơn</label>
-                                <input type="text" class="form-control" placeholder="MOD311FAGGG1" value="MOD311FAGGG1">
+                                <input type="text" class="form-control" placeholder="MOD311FAGGG1" value="">
                               </div>
                               <div class="form-group col-md-6">
                                 <label for="inputPassword4">Mã khách hàng</label>
-                                <input type="text" class="form-control" value="KHHFAOOUUQ01" placeholder="KHHFAOOUUQ01">
+                                <input type="text" class="form-control" value="" placeholder="KHHFAOOUUQ01">
                               </div>
                             </div>
-                            <div class="form-group">
-                              <label for="inputAddress">Ngày nhâp hàng</label>
-                              <input type="text" class="form-control" id="inputAddress" placeholder="dd/mm/yyy hours:min" value="12/12/2021 08:40">
-                            </div>
-                            <div class="form-group">
-                              <label for="inputAddress2">Giá thành(triệu)</label>
-                              <input type="text" class="form-control" id="inputAddress2" placeholder="Triệu đồng" value="60">
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress">Ngày nhâp hàng</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="dd/mm/yyy hours:min" >
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress2">Giá thành(triệu)</label>
+                              <input type="text" class="form-control" id="inputAddress2" placeholder="Triệu đồng" value="">
+                              </div>
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-4">
-                                <label>Vị trí</label>
+                                <label>Mức độ ưu tiên</label>
                                 <select id="inputGroupGood" class="form-control">
-                                  <option selected>Kho BK1</option>
-                                  <option>Kho BK2</option>
-                                  <option>Kho BK3</option>
+                                  <option selected>Tiêu chuẩn</option>
+                                  <option>Trung bình</option>
+                                  <option>Gấp</option>
                                 </select>
+                              </div>
+                            </div>
+                            <hr>
+                            <h5>Thêm sản phẩm</h5>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputEmail4">Mã sản phẩm</label>
+                                <input type="text" class="form-control" placeholder="MOD311FAGGG1" value="">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputPassword4">Tên sản phẩm</label>
+                                <input type="text" class="form-control" value="" placeholder="">
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress">Kích thước</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="m/m/m" >
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress2">Giá thành(triệu)</label>
+                              <input type="text" class="form-control" id="inputAddress2" placeholder="Triệu đồng" value="">
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress">Số lượng</label>
+                                <input type="number" class="form-control" id="inputAddress" placeholder="dd/mm/yyy hours:min" >
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress2">Nhóm hàng</label>
+                                <select id="inputGroupGood" class="form-control">
+                                  <option selected>Đồ điện tử</option>
+                                  <option>Đồ ăn</option>
+                                  <option>Đồ gia dụng</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <button class="btn btn-outline-success">Thêm</button>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-12">
+                                <label>Danh sách sản phẩm trong đơn</label>
+                                <table id="example2" class="table table-bordered table-striped">
+                                  <thead>
+                                    <tr>
+                                      <td>Mã sản phẩm</td>
+                                      <td>Tên sản phẩm</td>
+                                      <td>Kích thước</td>
+                                      <td>Giá thành</td>
+                                      <td>Số lượng</td>
+                                      <td>Nhóm hàng</td>
+                                      <td>Thao tác</td>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>111</td>
+                                      <td>Bánh trung thu</td>
+                                      <td>0.1/0.6/0.2</td>
+                                      <td>60.000</td>
+                                      <td>12</td>
+                                      <td>Đồ ăn</td>
+                                      <td style="display: flex;">
+                                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                          <i class="fa-solid fa-pen-to-square"></i>
+                                        </button>
+                                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
                               </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                    <button type="button" class="btn btn-primary">Lưu</button>
+                    <button type="button" class="btn btn-primary " data-dismiss="modal">Xác nhận</button>
                     </div>
                 </div>
                 </div>
