@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- font awesome online -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -208,6 +210,50 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Quản lý đơn hàng
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="input-order.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Đơn nhập</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pending-orders.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lập lịch xử lý xuất đơn</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lập lịch vận chuyển</p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="create-route.html" class="nav-link">
+                      <span>&nbsp;&nbsp;&nbsp;</span>
+                      <i class="fa-solid fa-route nav-icon"></i>
+                      <p>Khởi tạo lộ trình</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="route-list.html" class="nav-link" style="padding-left: 12%;">
+                      <i class="far fa-solid fa-list nav-icon"></i>
+                      <p>Danh sách lộ trình</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Tuỳ chỉnh thông tin
@@ -239,85 +285,24 @@
                   <p>Thông tin sản phẩm</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="product-groups.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Thông tin nhóm hàng</p>
-                </a>
-              </li>
             </ul>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                KPI nhân viên
+                Quản lý nhân viên
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="employees.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard KPI</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Khởi tạo KPI cá nhân</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Quản lý KPI cá nhân</p>
+                  <p>Danh sách nhân viên</p>
                 </a>
               </li>
 
-            </ul>
-          </li> -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Quản lý đơn hàng
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="input-order.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Đơn nhập</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pending-orders.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Lập lịch xử lý xuất đơn</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Lập lịch vận chuyển</p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="create-route.html" class="nav-link">
-                      <i class="far nav-icon"></i>
-                      <p>Khởi tạo lộ trình</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="route-list.html" class="nav-link">
-                      <i class="far nav-icon"></i>
-                      <p>Danh sách lộ trình</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
             </ul>
           </li>
         </ul>
@@ -364,9 +349,10 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
+                <Button class="btn btn-sm btn-success button-themmoi" type="button" data-toggle="modal" data-target="#exampleModal">Thêm mới</Button>
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
-                  <tr>
+                  <tr style="text-align: center;">
                     <th>STT</th>
                     <th>Tên khách hàng</th>
                     <th>Mã khách hàng</th>
@@ -375,7 +361,7 @@
                     <th>Địa chỉ</th>
                     <th>Thời điểm mở cửa</th>
                     <th>Thời điểm đóng cửa</th>
-                    <th>Thao tác</th>
+                    <th>Thao tác&nbsp;</th>
                 </tr>
                   </thead>
                   <tbody>
@@ -389,59 +375,59 @@
                         <td>08:00:00</td>
                         <td>20:00:00</td>
                         <td style="display: flex;">
-                            <button class="btn btn-primary btn-sm">Detail</button>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
+                          <button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                          <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                          <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td>Ga hà nội 2</td>
-                        <td>C1</td>
+                        <td>C2</td>
                         <td>105.841031</td>
                         <td>21.024259</td>
                         <td>Ga Hà Nội</td>
                         <td>08:00:00</td>
                         <td>20:00:00</td>
                         <td style="display: flex;">
-                            <button class="btn btn-primary btn-sm">Detail</button>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
+                          <button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                          <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                          <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                     <tr>
                         <td>3</td>
                         <td>Ga hà nội 3</td>
-                        <td>C1</td>
+                        <td>C3</td>
                         <td>105.841031</td>
                         <td>21.024259</td>
                         <td>Ga Hà Nội</td>
                         <td>08:00:00</td>
                         <td>20:00:00</td>
                         <td style="display: flex;">
-                            <button class="btn btn-primary btn-sm">Detail</button>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
+                          <button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                          <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                          <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                     <tr>
                         <td>4</td>
                         <td>Ga hà nội 4</td>
-                        <td>C1</td>
+                        <td>C4</td>
                         <td>105.841031</td>
                         <td>21.024259</td>
                         <td>Ga Hà Nội</td>
                         <td>08:00:00</td>
                         <td>20:00:00</td>
                         <td style="display: flex;">
-                            <button class="btn btn-primary btn-sm">Detail</button>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
+                          <button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                          <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                          <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                   </tbody>
                   <tfoot>
-                  <tr>
+                  <tr style="text-align: center;">
                     <th>STT</th>
                     <th>Tên khách hàng</th>
                     <th>Mã khách hàng</th>
@@ -454,6 +440,55 @@
                   </tr>
                   </tfoot>
                 </table>
+              </div>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Thêm mới khách hàng</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputEmail4">Tên khách hàng</label>
+                                <input type="text" class="form-control" placeholder="tên khách hàng">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputPassword4">Kinh độ</label>
+                                <input type="text" class="form-control" placeholder="105.841031">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputAddress">Vĩ độ</label>
+                              <input type="text" class="form-control" id="inputAddress" placeholder="21.024259" >
+                            </div>
+                            <div class="form-group">
+                              <label for="inputAddress2">Địa chỉ</label>
+                              <input type="text" class="form-control" id="inputAddress2" placeholder="...." >
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress2">Thời điểm mở cửa</label>
+                                <input type="text" class="form-control" id="inputAddress2" placeholder="hh:mm:ss" >
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress2">Thời điểm đóng cửa</label>
+                                <input type="text" class="form-control" id="inputAddress2" placeholder="hh:mm:ss" >
+                              </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+                    <button type="button" class="btn btn-primary">Lưu</button>
+                    </div>
+                </div>
+                </div>
               </div>
               <!-- /.card-body -->
             </div>
@@ -522,17 +557,8 @@
     $(function () {
       $("#example1").DataTable({
         "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        "buttons": ["excel", "pdf", "print", "colvis"]
       }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-      });
     });
 </script>
 </body>

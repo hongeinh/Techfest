@@ -325,7 +325,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Chi tiết đơn hàng 112</h1>
+            <h1>Quản lý xuất hàng</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -349,153 +349,274 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <Button class="btn btn-sm btn-success button-themmoi">Thêm mới</Button>
+                <Button class="btn btn-sm btn-success button-themmoi" type="button" data-toggle="modal" data-target="#exampleModal">Thêm mới</Button>
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
-                    <tr>
-                        <th>Mã sản phẩm</th>
-                        <th>Tên sản phẩm</th>
-                        <th>Kích thước(m/m/m)</th>
-                        <th>Giá thành</th>
-                        <th>Số lượng</th>
-                        <th>Nhóm hàng</th>
+                      <tr>
+                        <th>Mã đơn</th>
+                        <th>Mã khách hàng</th>
+                        <th>Mức độ</th>
+                        <th>Ngày tiếp nhận</th>
+                        <th>Ngày kết thúc</th>
                         <th>Trạng thái</th>
-                        <th>Thao tác</th>
-                    </tr>
+                        <th>Địa chỉ</th>
+                        <th></th>
+                      </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td>111</td>
-                        <td>Bánh trung thu</td>
-                        <td>0.1/0.6/0.2</td>
-                        <td>60.000</td>
-                        <td>12</td>
-                        <td>Đồ ăn</td>
+                    <tbody style="text-align: center">
+                      <tr>
+                        <td>HD0962</td>
+                        <td>HM319NVC</td>
                         <td>
-                            <p style="color: green; text-align: center; font-size: 17px;">
-                                Đạt
-                            </p>
+                          <select class="custom-select">
+                            <option selected>Tiêu chuẩn</option>
+                            <option value="1">Trung bình</option>
+                            <option value="2">Gấp</option>
+                          </select>
                         </td>
-                        <td style="display: flex;">
-                          <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                          </button>
-                          <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>111</td>
-                        <td>Bánh bông lan</td>
-                        <td>0.1/0.6/0.2</td>
-                        <td>60.000</td>
-                        <td>12</td>
-                        <td>Đồ ăn</td>
+                        <td>30/09/2021 10:09:22</td>
+                        <td>30/09/2021 10:09:22</td>
+                        <td>Chưa xử lý</td>
+                        <td>319 Đường Nguyễn Văn Cừ, Ngọc Lâm, Long Biên district, Hanoi</td>
+                        <td><input type="checkbox" name="name1" />&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>AB020</td>
+                        <td>KN018NBK</td>
                         <td>
-                          <p style="color: green; text-align: center; font-size: 17px;">
-                            Đạt
-                        </p>
+                          <select class="custom-select">
+                            <option selected>Tiêu chuẩn</option>
+                            <option value="1">Trung bình</option>
+                            <option value="2">Gấp</option>
+                          </select>
                         </td>
-                        <td style="display: flex;">
-                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
-                              <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-                            <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>111</td>
-                        <td>Bánh chocopie</td>
-                        <td>0.1/0.6/0.2</td>
-                        <td>60.000</td>
-                        <td>12</td>
-                        <td>Đồ ăn</td>
+                        <td>30/09/2021 10:09:22</td>
+                        <td>30/09/2021 10:09:22</td>
+                        <td>Chưa xử lý</td>
+                        <td>18 Nguyễn Bỉnh Khiêm, Nguyễn Du, Hai Bà Trưng District, Hanoi</td>
+                        <td><input type="checkbox" name="name1" />&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>SH0021</td>
+                        <td>HH0077AC</td>
                         <td>
-                          <p style="color: red; text-align: center; font-size: 17px;">
-                            Lỗi
-                        </p>
+                          <select class="custom-select">
+                            <option selected>Tiêu chuẩn</option>
+                            <option value="1">Trung bình</option>
+                            <option value="2">Gấp</option>
+                          </select>
                         </td>
-                        <td style="display: flex;">
-                          <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                          </button>
-                          <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <td>30/09/2021 10:09:22</td>
+                        <td>30/09/2021 10:09:22</td>
+                        <td style="color: green;">Đã xử lý</td>
+                        <td>7 Đường Âu Cơ, Quang An, Tây Hồ, Hanoi</td>
+                        <td><input type="checkbox" name="name1" />&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>CB0005</td>
+                        <td>VT005NKT</td>
+                        <!-- <td><span class="middle bade badge-success">Bình thường</span></td> -->
+                        <td>
+                          <select class="custom-select">
+                            <option selected>Tiêu chuẩn</option>
+                            <option value="1">Trung bình</option>
+                            <option value="2">Gấp</option>
+                          </select>
                         </td>
-                    </tr>
+                        <td>30/09/2021 d10:09:22</td>
+                        <td>30/09/2021 10:09:22</td>
+                        <td style="">Chưa xử lý</td>
+                        <td>5 Nguyễn Khánh Toàn, Quan Hoa, Cầu Giấy district, Hanoi</td>
+                        <td><input type="checkbox" name="name1" />&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>VS0038</td>
+                        <td>THDKTTC</td>
+                        <!-- <td><span class="middle bade badge-success">Bình thường</span></td> -->
+                        <td>
+                          <select class="custom-select">
+                            <option selected>Tiêu chuẩn</option>
+                            <option value="1">Trung bình</option>
+                            <option value="2">Gấp</option>
+                          </select>
+                        </td>
+                        <td>30/09/2021 10:09:22</td>
+                        <td>30/09/2021 10:09:22</td>
+                        <td style="color: green;">Đã xử lý</td>
+                        <td>17 Hàng Khoai, Dong Xuan, Hoàn Kiếm district, Hanoi</td>
+                        <td><input type="checkbox" name="name1" />&nbsp;</td>
+                      </tr>
                     </tbody>
-                    <tfoot>
-                    <tr>
-                        <th>Mã sản phẩm</th>
-                        <th>Tên sản phẩm</th>
-                        <th>Kích thước(m/m/m)</th>
-                        <th>Giá thành</th>
-                        <th>Số lượng</th>
-                        <th>Nhóm hàng</th>
-                        <th>Trạng thái</th>
-                        <th>Thao tác</th>
-                    </tr>
-                    </tfoot>
                 </table>
               </div>
               <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Chi tiết sản phẩm</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-row">
-                                  <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Mã sản phẩm</label>
-                                    <input type="text" class="form-control" placeholder="MSP3111" value="111">
-                                  </div>
-                                  <div class="form-group col-md-6">
-                                    <label for="inputPassword4">Tên sản phẩm</label>
-                                    <input type="text" class="form-control" value="Bánh trung thu">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label for="inputAddress">Kích thước</label>
-                                  <input type="text" class="form-control" id="inputAddress" placeholder="dài/rộng/cao(m)" value="0.1/0.6/0.2">
-                                </div>
-                                <div class="form-group">
-                                  <label for="inputAddress2">Giá thành</label>
-                                  <input type="text" class="form-control" id="inputAddress2" placeholder="100.000đ" value="60000">
-                                </div>
-                                <div class="form-row">
-                                  <div class="form-group col-md-6">
-                                    <label for="inputCity">Nhóm hàng</label>
-                                    <select id="inputGroupGood" class="form-control">
-                                        <option selected>Đồ gia dụng</option>
-                                        <option>Đồ nội thất</option>
-                                        <option>Đồ ăn</option>
-                                    </select>
-                                  </div>
-                                  <div class="form-group col-md-4">
-                                    <label for="inputState">Trạng thái</label>
-                                    <select id="inputState" class="form-control">
-                                      <option selected>Đạt chuẩn</option>
-                                      <option>Lỗi</option>
-                                    </select>
-                                  </div>
-                                  <div class="form-group col-md-2">
-                                    <label for="inputZip">Số lượng</label>
-                                    <input type="number" class="form-control" value="12">
-                                  </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                        <button type="button" class="btn btn-primary">Lưu</button>
-                        </div>
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tạo mới đơn hàng</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputEmail4">Mã đơn</label>
+                                <input type="text" class="form-control" placeholder="MOD311FAGGG1" value="">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputPassword4">Mã khách hàng</label>
+                                <input type="text" class="form-control" value="" placeholder="KHHFAOOUUQ01">
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress">Ngày nhâp hàng</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="dd/mm/yyy hours:min" >
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress2">Giá thành(triệu)</label>
+                              <input type="text" class="form-control" id="inputAddress2" placeholder="Triệu đồng" value="">
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-4">
+                                <label>Mức độ ưu tiên</label>
+                                <select id="inputGroupGood" class="form-control">
+                                  <option selected>Tiêu chuẩn</option>
+                                  <option>Trung bình</option>
+                                  <option>Gấp</option>
+                                </select>
+                              </div>
+                            </div>
+                            <hr>
+                            <h5>Thêm sản phẩm</h5>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputEmail4">Mã sản phẩm</label>
+                                <input type="text" class="form-control" placeholder="MOD311FAGGG1" value="">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputPassword4">Tên sản phẩm</label>
+                                <input type="text" class="form-control" value="" placeholder="">
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress">Kích thước</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="m/m/m" >
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress2">Giá thành(triệu)</label>
+                              <input type="text" class="form-control" id="inputAddress2" placeholder="Triệu đồng" value="">
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress">Số lượng</label>
+                                <input type="number" class="form-control" id="inputAddress" placeholder="dd/mm/yyy hours:min" >
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress2">Nhóm hàng</label>
+                                <select id="inputGroupGood" class="form-control">
+                                  <option selected>Đồ điện tử</option>
+                                  <option>Đồ ăn</option>
+                                  <option>Đồ gia dụng</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <button class="btn btn-outline-success">Thêm</button>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-12">
+                                <label>Danh sách sản phẩm trong đơn</label>
+                                <table id="example2" class="table table-bordered table-striped">
+                                  <thead>
+                                    <tr>
+                                      <td>Mã sản phẩm</td>
+                                      <td>Tên sản phẩm</td>
+                                      <td>Kích thước</td>
+                                      <td>Giá thành</td>
+                                      <td>Số lượng</td>
+                                      <td>Nhóm hàng</td>
+                                      <td>Thao tác</td>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>111</td>
+                                      <td>Bánh trung thu</td>
+                                      <td>0.1/0.6/0.2</td>
+                                      <td>60.000</td>
+                                      <td>12</td>
+                                      <td>Đồ ăn</td>
+                                      <td style="display: flex;">
+                                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                          <i class="fa-solid fa-pen-to-square"></i>
+                                        </button>
+                                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+                    <button type="button" class="btn btn-primary " data-dismiss="modal">Xác nhận</button>
                     </div>
                 </div>
+                </div>
+              </div>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Tạo mới đơn hàng</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                      </div>
+                      <div class="modal-body">
+                          <form>
+                              <div class="form-row">
+                                <div class="form-group col-md-6">
+                                  <label for="inputEmail4">Mã đơn</label>
+                                  <input type="text" class="form-control" placeholder="MOD311FAGGG1" value="MOD311FAGGG1">
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <label for="inputPassword4">Mã khách hàng</label>
+                                  <input type="text" class="form-control" value="KHHFAOOUUQ01" placeholder="KHHFAOOUUQ01">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="inputAddress">Ngày nhâp hàng</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="dd/mm/yyy hours:min" value="12/12/2021 08:40">
+                              </div>
+                              <div class="form-group">
+                                <label for="inputAddress2">Danh sách sản phẩm</label>
+                                <input type="text" class="form-control" id="inputAddress2" placeholder="Triệu đồng" value="60">
+                              </div>
+                          </form>
+                      </div>
+                      <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+                      <button type="button" class="btn btn-primary">Lưu</button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer clearfix">
+                <a href="schedule-plans.html" class="btn btn-sm btn-info float-right">Lập kế hoạch</a>
+              </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
@@ -563,23 +684,14 @@
     $(function () {
       $("#example1").DataTable({
         "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["excel", "pdf", "print", "colvis"]
+        "buttons": ["excel", "pdf","colvis"]
       }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-      });
     });
 </script>
 <script type="text/javascript">
-    $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
-    });
+  $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+  });
 </script>
 </body>
 </html>

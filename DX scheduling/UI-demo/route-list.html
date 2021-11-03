@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- font awesome online -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -208,6 +210,50 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Quản lý đơn hàng
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="input-order.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Đơn nhập</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pending-orders.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lập lịch xử lý xuất đơn</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lập lịch vận chuyển</p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="create-route.html" class="nav-link">
+                      <span>&nbsp;&nbsp;&nbsp;</span>
+                      <i class="fa-solid fa-route nav-icon"></i>
+                      <p>Khởi tạo lộ trình</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="route-list.html" class="nav-link" style="padding-left: 12%;">
+                      <i class="far fa-solid fa-list nav-icon"></i>
+                      <p>Danh sách lộ trình</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Tuỳ chỉnh thông tin
@@ -239,85 +285,24 @@
                   <p>Thông tin sản phẩm</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="product-groups.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Thông tin nhóm hàng</p>
-                </a>
-              </li>
             </ul>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                KPI nhân viên
+                Quản lý nhân viên
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="employees.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard KPI</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Khởi tạo KPI cá nhân</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Quản lý KPI cá nhân</p>
+                  <p>Danh sách nhân viên</p>
                 </a>
               </li>
 
-            </ul>
-          </li> -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Quản lý đơn hàng
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="input-order.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Đơn nhập</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pending-orders.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Lập lịch xử lý xuất đơn</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Lập lịch vận chuyển</p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="create-route.html" class="nav-link">
-                      <i class="far nav-icon"></i>
-                      <p>Khởi tạo lộ trình</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="route-list.html" class="nav-link">
-                      <i class="far nav-icon"></i>
-                      <p>Danh sách lộ trình</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
             </ul>
           </li>
         </ul>
@@ -333,8 +318,8 @@
   </aside>
   <!-- /.control-sidebar -->
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+ <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -382,34 +367,34 @@
                     <tr>
                         <td>1</td>
                         <td>R1</td>
-                        <td></td>
+                        <td><span id="result-employ"></span></td>
                         <td>0.8</td>
                         <td>7200000</td>
-                        <td>6</td>
+                        <td>3</td>
                         <td>7000000</td>
                         <td>20-10-2021</td>
                         <td style="display: flex;">
-                          <a href="route.html"><button class="btn btn-primary btn-sm">Detail</button></a>
-                          <button class="btn btn-danger btn-sm">Delete</button>
+                          <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                          <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                           <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal">
-                            Bind
+                            <i class="fa-solid fa-van-shuttle"></i>
                           </button>
                         </td>
                     </tr>
                     <tr>
                       <td>2</td>
                       <td>R1</td>
-                      <td>Cong 1</td>
+                      <td>Lê Văn Công</td>
                       <td>0.8</td>
                       <td>7200000</td>
-                      <td>6</td>
+                      <td>1</td>
                       <td>7000000</td>
                       <td>20-10-2021</td>
                       <td style="display: flex;">
-                          <a href="route.html"><button class="btn btn-primary btn-sm">Detail</button></a>
-                          <button class="btn btn-danger btn-sm">Delete</button>
-                          <button class="btn btn-success btn-sm">Unbind</button>
-                        </td>
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
                   </tr>
                   </tbody>
                   <tfoot>
@@ -438,11 +423,74 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      
+                      <table id="list-employ" class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th>STT</th>
+                            <th>Mã nhân viên</th>
+                            <th>Tên nhân viên</th>
+                            <th>Trạng thái</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody style="text-align: center" class="employees-list">
+                          <tr>
+                            <td>1</td>
+                            <td>NVHOAHDOU311</td>
+                            <td class="name-employ">Lê Hoàng Anh Trung</td>
+                            <td style="text-align: center; color: green;">Sẵn sàng</td>
+                            <th><input type="checkbox" name= "check_all" class="chk"/></th>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>NVHOAHDOU311</td>
+                            <td class="name-employ">Lưu Tiến Thái</td>
+                            <td style="text-align: center; color: green;">Sẵn sàng</td>
+                            <th><input type="checkbox" name= "check_all" class="chk"/></th>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>NVHOAHDOU311</td>
+                            <td class="name-employ">Đặng Công Tiến</td>
+                            <td style="text-align: center; color: green;">Sẵn sàng</td>
+                            <td><input type="checkbox" name="nv1" class="chk"></td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>NVHOAHDOU311</td>
+                            <td class="name-employ">Vũ Xuân Chiến</td>
+                            <td style="text-align: center; color: green;">Sẵn sàng</td>
+                            <th><input type="checkbox" name= "check_all" class="chk"/></th>
+                          </tr>
+                          <tr>
+                            <td>5</td>
+                            <td>NVHOAHDOU311</td>
+                            <td class="name-employ">Phùng Ngọc Minh</td>
+                            <td style="text-align: center; color: green;">Sẵn sàng</td>
+                            <th><input type="checkbox" name= "check_all" class="chk"/></th>
+                          </tr>
+                          <tr>
+                            <td>6</td>
+                            <td>NVHOAHDOU311</td>
+                            <td class="name-employ">Đăng Quang Linh</td>
+                            <td style="text-align: center; color: green;">Sẵn sàng</td>
+                            <th><input type="checkbox" name= "check_all" class="chk"/></th>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th>STT</th>
+                            <th>Mã nhân viên</th>
+                            <th>Tên nhân viên</th>
+                            <th>Trạng thái</th>
+                            <th></th>
+                          </tr>
+                        </tfoot>
+                    </table>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                      <button type="button" class="btn btn-primary">Xác nhận</button>
+                      <button type="button" class="btn btn-primary" id="confirm-select-em" data-dismiss="modal">Xác nhận</button>
                     </div>
                   </div>
                 </div>
@@ -511,26 +559,19 @@
 
 <!-- Page specific script -->
 <script>
-    $(function () {
-      $("#example1").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-      });
-    });
-</script>
-<script type="text/javascript">
-  $('#myModal').on('shown.bs.modal', function () {
-      $('#myInput').trigger('focus')
-  });
+  $('#confirm-select-em').on('click', function(){
+    var tableData = "";
+    $("#list-employ tbody tr").each(function(){
+      var currentRow = $(this);
+      if (currentRow.find(".chk").is(":checked")){
+        var name = currentRow.find("td:eq(2)").html();
+        tableData = tableData + name + ",\t";
+      }
+    })
+    tableData = tableData.slice(0, tableData.length - 2);
+    console.log(tableData);
+    $('#result-employ').html(tableData);
+  })
 </script>
 </body>
 </html>
