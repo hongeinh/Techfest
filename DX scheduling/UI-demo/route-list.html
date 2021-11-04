@@ -330,7 +330,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Bảng dữ liệu</li>
+              <li class="breadcrumb-item active">Danh sách lộ trình</li>
             </ol>
           </div>
         </div>
@@ -345,7 +345,13 @@
             <div class="card">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Bảng dữ liệu</h3>
+                <h3 class="card-title">Danh sách lộ trình</h3>
+                <h3 class="card-title" style="float: right;">
+                  <span> Tổng số</span>
+                  <strong id="binding">2</strong>
+                  <strong>/ 3</strong>
+                  <span>chuyến đã được phụ trách</span>
+                </h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -366,55 +372,57 @@
                   <tbody>
                     <tr>
                         <td>1</td>
-                        <td>R1</td>
+                        <td>RHFNAFWE15</td>
                         <td><span id="result-employ"></span></td>
                         <td>0.8</td>
-                        <td>7200000</td>
+                        <td>2.200.000</td>
                         <td>3</td>
-                        <td>7000000</td>
-                        <td>20-10-2021</td>
+                        <td>4.200.000</td>
+                        <td>17/10/2021</td>
                         <td style="display: flex;">
                           <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
                           <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
-                          <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal">
+                          <button type="button" id="button-binding" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal">
                             <i class="fa-solid fa-van-shuttle"></i>
                           </button>
                         </td>
                     </tr>
                     <tr>
                       <td>2</td>
-                      <td>R1</td>
+                      <td>RHFNAFWW12</td>
                       <td>Lê Văn Công</td>
                       <td>0.8</td>
-                      <td>7200000</td>
+                      <td>400.000</td>
                       <td>1</td>
-                      <td>7000000</td>
-                      <td>20-10-2021</td>
+                      <td>1.800.000</td>
+                      <td>27/10/2021</td>
                       <td style="display: flex;">
                         <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
                         <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                         <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
                       </td>
-                  </tr>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Chiến, Trần Đình Dương</td>
+                      <td>0.9</td>
+                      <td>1.800.000</td>
+                      <td>2</td>
+                      <td>3.000.000</td>
+                      <td>30/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
                   </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>STT</th>
-                    <th>Mã lộ trình</th>
-                    <th>Tên lộ trình</th>
-                    <th>Hiệu suất</th>
-                    <th>Doanh thu</th>
-                    <th>Số lượng xe</th>
-                    <th>Tổng chi phí</th>
-                    <th>Ngày giao dự kiến</th>
-                    <th>Thao tác</th>
-                  </tr>
-                  </tfoot>
                 </table>
               </div>
               <!-- Modal -->
               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
+                <div class="modal-dialog modal-lg" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
                       <h5 class="modal-title" id="exampleModalLabel">Danh sách nhân viên trống lịch</h5>
@@ -424,11 +432,11 @@
                     </div>
                     <div class="modal-body">
                       <table id="list-employ" class="table table-bordered table-striped">
-                        <thead>
+                        <thead style="text-align: center;">
                           <tr>
                             <th>STT</th>
-                            <th>Mã nhân viên</th>
                             <th>Tên nhân viên</th>
+                            <th>Từng phụ trách(chuyến)</th>
                             <th>Trạng thái</th>
                             <th></th>
                           </tr>
@@ -436,52 +444,52 @@
                         <tbody style="text-align: center" class="employees-list">
                           <tr>
                             <td>1</td>
-                            <td>NVHOAHDOU311</td>
                             <td class="name-employ">Lê Hoàng Anh Trung</td>
+                            <td>22</td>
                             <td style="text-align: center; color: green;">Sẵn sàng</td>
                             <th><input type="checkbox" name= "check_all" class="chk"/></th>
                           </tr>
                           <tr>
                             <td>2</td>
-                            <td>NVHOAHDOU311</td>
                             <td class="name-employ">Lưu Tiến Thái</td>
+                            <td>50</td>
                             <td style="text-align: center; color: green;">Sẵn sàng</td>
                             <th><input type="checkbox" name= "check_all" class="chk"/></th>
                           </tr>
                           <tr>
                             <td>3</td>
-                            <td>NVHOAHDOU311</td>
                             <td class="name-employ">Đặng Công Tiến</td>
+                            <td>30</td>
                             <td style="text-align: center; color: green;">Sẵn sàng</td>
                             <td><input type="checkbox" name="nv1" class="chk"></td>
                           </tr>
                           <tr>
                             <td>4</td>
-                            <td>NVHOAHDOU311</td>
                             <td class="name-employ">Vũ Xuân Chiến</td>
+                            <td>12</td>
                             <td style="text-align: center; color: green;">Sẵn sàng</td>
                             <th><input type="checkbox" name= "check_all" class="chk"/></th>
                           </tr>
                           <tr>
                             <td>5</td>
-                            <td>NVHOAHDOU311</td>
                             <td class="name-employ">Phùng Ngọc Minh</td>
+                            <td>22</td>
                             <td style="text-align: center; color: green;">Sẵn sàng</td>
                             <th><input type="checkbox" name= "check_all" class="chk"/></th>
                           </tr>
                           <tr>
                             <td>6</td>
-                            <td>NVHOAHDOU311</td>
                             <td class="name-employ">Đăng Quang Linh</td>
+                            <td>33</td>
                             <td style="text-align: center; color: green;">Sẵn sàng</td>
                             <th><input type="checkbox" name= "check_all" class="chk"/></th>
                           </tr>
                         </tbody>
-                        <tfoot>
+                        <tfoot style="text-align: center;">
                           <tr>
                             <th>STT</th>
-                            <th>Mã nhân viên</th>
                             <th>Tên nhân viên</th>
+                            <th>Từng phụ trách(chuyến)</th>
                             <th>Trạng thái</th>
                             <th></th>
                           </tr>
@@ -564,13 +572,15 @@
     $("#list-employ tbody tr").each(function(){
       var currentRow = $(this);
       if (currentRow.find(".chk").is(":checked")){
-        var name = currentRow.find("td:eq(2)").html();
+        var name = currentRow.find("td:eq(1)").html();
         tableData = tableData + name + ",\t";
       }
     })
     tableData = tableData.slice(0, tableData.length - 2);
     console.log(tableData);
     $('#result-employ').html(tableData);
+    $('#button-binding').removeClass("btn-success").addClass('btn-secondary');
+    $('#binding').html("3");
   })
 </script>
 </body>

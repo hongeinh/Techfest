@@ -276,7 +276,7 @@
               <li class="nav-item">
                 <a href="warehouse.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Thông tin kho hàng</p>
+                  <p>Thông tin Kho</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -330,7 +330,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Bảng dữ liệu</li>
+              <li class="breadcrumb-item active">Danh sách nhân viên</li>
             </ol>
           </div>
         </div>
@@ -345,7 +345,7 @@
             <div class="card">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Bảng dữ liệu</h3>
+                <h3 class="card-title">Danh sách nhân viên</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -355,8 +355,7 @@
                     <tr style="text-align: center;">
                       <th>Mã nhân viên</th>
                       <th>Tên nhân viên</th>
-                      <th>Trình độ</th>
-                      <th>Bộ phận công tác</th>
+                      <th>Bộ phận</th>
                       <th>Số điện thoại</th>
                       <th>Trạng thái</th>
                       <th>Thao tác <span style="color: white;">space</span></th>
@@ -366,14 +365,13 @@
                     <tr>
                       <td>NV0001HOLHA1</td>
                       <td>Lê Hoàng Anh Trung</td>
-                      <td>Kỹ sư</td>
                       <td>
                         <select id="inputGroupGood" class="form-control">
-                          <option>Kho hàng</option>
-                          <option selected>Vận chuyển hàng</option>
+                          <option>Kho</option>
+                          <option selected>Vận chuyển</option>
                         </select>
                       </td>
-                      <td>0941067297</td>
+                      <td>0942126265</td>
                       <td style="text-align: center; color: green;">Sẵn sàng</td>
                       <td style="display: flex;">
                         <button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
@@ -382,13 +380,131 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>NV0001HOLHA2</td>
-                      <td>Nguyễn Hồng Anh</td>
-                      <td>Kỹ sư</td>
+                      <td>NV0001HNMPA1</td>
+                      <td>Nguyễn Mạnh Phúc</td>
                       <td>
                         <select id="inputGroupGood" class="form-control">
-                          <option selected>Kho hàng</option>
-                          <option >Vận chuyển hàng</option>
+                          <option>Kho</option>
+                          <option selected>Vận chuyển</option>
+                        </select>
+                      </td>
+                      <td>0832126265</td>
+                      <td style="text-align: center; color: green;">Sẵn sàng</td>
+                      <td style="display: flex;">
+                        <button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>NV0001NHAA1</td>
+                      <td>Nguyễn Hồng Ánh</td>
+                      <td>
+                        <select id="inputGroupGood" class="form-control">
+                          <option>Kho</option>
+                          <option selected>Vận chuyển</option>
+                        </select>
+                      </td>
+                      <td>0912126255</td>
+                      <td style="text-align: center; color: green;">Sẵn sàng</td>
+                      <td style="display: flex;">
+                        <button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>NV0001HNMPA1</td>
+                      <td>Trần Phi Hùng</td>
+                      <td>
+                        <select id="inputGroupGood" class="form-control">
+                          <option selected>Kho</option>
+                          <option >Vận chuyển</option>
+                        </select>
+                      </td>
+                      <td>0832126212</td>
+                      <td style="text-align: center; color: green;">Sẵn sàng</td>
+                      <td style="display: flex;">
+                        <button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>NV0001HLTTA1</td>
+                      <td>Lưu Tiến Thái</td>
+                      <td>
+                        <select id="inputGroupGood" class="form-control">
+                          <option >Kho</option>
+                          <option selected>Vận chuyển</option>
+                        </select>
+                      </td>
+                      <td>0832126212</td>
+                      <td style="text-align: center; color: green;">Sẵn sàng</td>
+                      <td style="display: flex;">
+                        <button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>NV0001HPNMA1</td>
+                      <td>Phùng Ngọc Minh</td>
+                      <td>
+                        <select id="inputGroupGood" class="form-control">
+                          <option >Kho</option>
+                          <option selected>Vận chuyển</option>
+                        </select>
+                      </td>
+                      <td>0732129202</td>
+                      <td style="text-align: center; color: green;">Sẵn sàng</td>
+                      <td style="display: flex;">
+                        <button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>NV0001HPNMA1</td>
+                      <td>Đặng Công Tiến</td>
+                      <td>
+                        <select id="inputGroupGood" class="form-control">
+                          <option >Kho</option>
+                          <option selected>Vận chuyển</option>
+                        </select>
+                      </td>
+                      <td>0832129202</td>
+                      <td style="text-align: center; color: green;">Sẵn sàng</td>
+                      <td style="display: flex;">
+                        <button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>NV0001NKLB2</td>
+                      <td>Nguyễn Khánh Linh</td>
+                      <td>
+                        <select id="inputGroupGood" class="form-control">
+                          <option selected>Kho</option>
+                          <option >Vận chuyển</option>
+                        </select>
+                      </td>
+                      <td>0942126212</td>
+                      <td style="text-align: center; color: green;">Sẵn sàng</td>
+                      <td style="display: flex;">
+                        <button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>NV0001HONHA1</td>
+                      <td>Nguyễn Hồng Anh</td>
+                      <td>
+                        <select id="inputGroupGood" class="form-control">
+                          <option selected>Kho</option>
+                          <option >Vận chuyển</option>
                         </select>
                       </td>
                       <td>0831067297</td>
@@ -400,31 +516,12 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>NV0001HOLB23</td>
+                      <td>NV00011TMCB2</td>
                       <td>Tran Manh Công</td>
-                      <td>Chuyên gia</td>
                       <td>
                         <select id="inputGroupGood" class="form-control">
-                          <option>Kho hàng</option>
-                          <option selected>Vận chuyển hàng</option>
-                        </select>
-                      </td>
-                      <td>0941012297</td>
-                      <td style="text-align: center; color: rgb(255, 166, 0);">Làm việc</td>
-                      <td style="display: flex;">
-                        <button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
-                        <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
-                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>NV0001HOC56</td>
-                      <td>Phạm Lê Đức</td>
-                      <td>Chuyên gia</td>
-                      <td>
-                        <select id="inputGroupGood" class="form-control">
-                          <option>Kho hàng</option>
-                          <option selected>Vận chuyển hàng</option>
+                          <option>Kho</option>
+                          <option selected>Vận Chuyển</option>
                         </select>
                       </td>
                       <td>0941012297</td>
@@ -438,11 +535,10 @@
                     <tr>
                       <td>NV0001HOLA25</td>
                       <td>Nguyễn Khánh Linh</td>
-                      <td>Chuyên gia</td>
                       <td>
                         <select id="inputGroupGood" class="form-control">
-                          <option>Kho hàng</option>
-                          <option selected>Vận chuyển hàng</option>
+                          <option>Kho</option>
+                          <option selected>Vận Chuyển</option>
                         </select>
                       </td>
                       <td>0941012297</td>
@@ -456,11 +552,10 @@
                     <tr>
                       <td>NV0006HOLB77</td>
                       <td>Nguyễn Trí Hùng</td>
-                      <td>Chuyên gia</td>
                       <td>
                         <select id="inputGroupGood" class="form-control">
-                          <option>Kho hàng</option>
-                          <option selected>Vận chuyển hàng</option>
+                          <option>Kho</option>
+                          <option selected>Vận chuyển</option>
                         </select>
                       </td>
                       <td>0941012297</td>
@@ -471,17 +566,24 @@
                         <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                       </td>
                     </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr style="text-align: center;">
-                      <th>Mã nhân viên</th>
-                      <th>Tên nhân viên</th>
-                      <th>Bộ phận công tác</th>
-                      <th>Số điện thoại</th>
-                      <th>Trạng thái</th>
-                      <th>Thao tác <span style="color: white;">space</span></th>
+                    <tr>
+                      <td>NV00011TMCA1</td>
+                      <td>Phạm Lê Đức</td>
+                      <td>
+                        <select id="inputGroupGood" class="form-control">
+                          <option selected>Kho</option>
+                          <option>Vận chuyển</option>
+                        </select>
+                      </td>
+                      <td>0831012297</td>
+                      <td style="text-align: center; color: rgb(255, 166, 0);">Làm việc</td>
+                      <td style="display: flex;">
+                        <button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                      </td>
                     </tr>
-                  </tfoot>
+                  </tbody>
                 </table>
               </div>
               <!-- Modal -->
@@ -514,7 +616,7 @@
                               <div class="form-group col-md-4">
                                 <label>Bộ phận công tác</label>
                                 <select id="inputUnitEmployee" class="form-control">
-                                  <option value="2">Kho hàng</option>
+                                  <option value="2">Kho</option>
                                   <option value="1">Vận chuyển</option>
                                 </select>
                               </div>
