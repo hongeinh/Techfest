@@ -21,7 +21,7 @@ $(function () {
           {
             backgroundColor: '#007bff',
             borderColor: '#007bff',
-            data: [37, 30, 40, 42, 35, 41, 38]
+            data: [111, 120, 112, 98, 140, 141, 142]
           }
         ]
       },

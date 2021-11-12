@@ -48,3 +48,26 @@ td.half-cell-warning-left {
     float: right;
 }
 
+.bg-orange {
+    background-color: #FF8C00 !important;
+  }
+
+  .bg-blue {
+    background-color: #add8e6 !important;
+  }
+
+  .bg-pink {
+    background-color: #fe7da6 !important;
+  }
+
+  .bg-sienna {
+    background-color: cyan !important;
+  }
+
+  .bg-purple {
+    background-color: #be93d4 !important;
+  }
+  td.half-cell-success-sienna {
+    background-image:linear-gradient(to right, #28a745 50%, cyan 50%) !important;
+    
+}
