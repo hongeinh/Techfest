@@ -236,7 +236,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="create-route.html" class="nav-link">
+                    <a href="create-route-employee.html" class="nav-link">
                       <span>&nbsp;&nbsp;&nbsp;</span>
                       <i class="fa-solid fa-route nav-icon"></i>
                       <p>Khởi tạo lộ trình</p>
@@ -345,11 +345,11 @@
             <div class="card">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Danh sách lộ trình</h3>
+                <h3 class="card-title"></h3>
                 <h3 class="card-title" style="float: right;">
                   <span> Tổng số</span>
-                  <strong id="binding">2</strong>
-                  <strong>/ 3</strong>
+                  <strong id="binding">28</strong>
+                  <strong>/ 30</strong>
                   <span>chuyến đã được phụ trách</span>
                 </h3>
               </div>
@@ -361,8 +361,7 @@
                     <th>STT</th>
                     <th>Mã lộ trình</th>
                     <th>Người phụ trách</th>
-                    <th>Hiệu suất</th>
-                    <th>Doanh thu</th>
+                    <th>Thời gian TB/ Vận tốc TB(phút/xe)</th>
                     <th>Số lượng xe</th>
                     <th>Tổng chi phí</th>
                     <th>Ngày giao dự kiến</th>
@@ -374,13 +373,12 @@
                         <td>1</td>
                         <td>RHFNAFWE15</td>
                         <td><span id="result-employ"></span></td>
-                        <td>0.8</td>
-                        <td>2.200.000</td>
-                        <td>3</td>
-                        <td>4.200.000</td>
+                        <td>243.8/126.7</td>
+                        <td>5</td>
+                        <td>1.010.981</td>
                         <td>17/10/2021</td>
                         <td style="display: flex;">
-                          <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                          <a href="route-employee.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
                           <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                           <button type="button" id="button-binding" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal">
                             <i class="fa-solid fa-van-shuttle"></i>
@@ -389,10 +387,25 @@
                     </tr>
                     <tr>
                       <td>2</td>
-                      <td>RHFNAFWW12</td>
+                      <td>RHFNAFWE19</td>
+                      <td><span id="result-employ"></span></td>
+                      <td>253.1/200</td>
+                      <td>2</td>
+                      <td>4.000.000</td>
+                      <td>18/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button type="button" id="button-binding" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal">
+                          <i class="fa-solid fa-van-shuttle"></i>
+                        </button>
+                      </td>
+                  </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>RHFNAFWW16</td>
                       <td>Lê Văn Công</td>
-                      <td>0.8</td>
-                      <td>400.000</td>
+                      <td>122.8/56.4</td>
                       <td>1</td>
                       <td>1.800.000</td>
                       <td>27/10/2021</td>
@@ -403,16 +416,379 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>2</td>
-                      <td>RHFNAFWW12</td>
+                      <td>4</td>
+                      <td>RHFNAFWW17</td>
                       <td>Lê Văn Chiến, Trần Đình Dương</td>
-                      <td>0.9</td>
-                      <td>1.800.000</td>
+                      <td>345.9/180.6</td>
                       <td>2</td>
                       <td>3.000.000</td>
                       <td>30/10/2021</td>
                       <td style="display: flex;">
                         <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>Nguyễn Văn Mạnh, Trần Thế Luật</td>
+                      <td>254.5/178.3</td>
+                      <td>2</td>
+                      <td>3.000.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW20</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route-employee.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route-employee.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route-employee.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route-employee.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route-employee.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route-employee.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>RHFNAFWW12</td>
+                      <td>Lê Văn Trung</td>
+                      <td>0.8</td>
+                      <td>1</td>
+                      <td>1.900.000</td>
+                      <td>31/10/2021</td>
+                      <td style="display: flex;">
+                        <a href="route-employee.html"><button class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></button></a>
                         <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                         <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-van-shuttle"></i></button>
                       </td>
@@ -567,6 +943,14 @@
 
 <!-- Page specific script -->
 <script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["excel", "pdf","colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+  });
+</script>
+<script>
   $('#confirm-select-em').on('click', function(){
     var tableData = "";
     $("#list-employ tbody tr").each(function(){
@@ -580,7 +964,7 @@
     console.log(tableData);
     $('#result-employ').html(tableData);
     $('#button-binding').removeClass("btn-success").addClass('btn-secondary');
-    $('#binding').html("3");
+    $('#binding').html("29");
   })
 </script>
 </body>

@@ -15,6 +15,12 @@
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
   <!-- cell style -->
   <link rel="stylesheet" href="../dist/css/cell.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- font awesome online -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -319,7 +325,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h3 class="m-0">Lập lịch xử lý xuất đơn (2/2)</h3>
+            <h3 class="m-0">Lập lịch xử lý xuất đơn (3/3)</h3>
           </div><!-- /.col -->
           <div class="col-sm-6">
           </div><!-- /.col -->
@@ -336,12 +342,11 @@
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
-          <div class="col-md-11">
+          <div class="col-md-12">
             <!-- MAP & BOX PANE -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Chi tiết lịch trình #LTXM001</h3>
-
+                <h3 class="card-title" style="font-weight: bold;">Chi tiết lịch trình #LTXM001</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -355,18 +360,15 @@
               <div class="card-body p-0">
                 <div class="d-md-flex">
                   <div class="p-1 flex-fill" style="overflow: hidden">
-                    <!-- Map will be created here -->
-                    <!-- <div id="world-map-markers" style="height: 325px; overflow: hidden">
-                      <div class="map"></div>
-                    </div> -->
-                    <table class="table table-responsive">
-                      <tr style="font-weight: bold;">
-                        <td><center>Đơn hàng</center></td>
-                        <td><center></center>Chi phí xử lý (VNĐ)</center></td>
-                        <td><center>Ngày xác nhận</center></td>
-                        <td><center>Ngày thực hiện</center></td>
-                        <td><center>Dự tính hoàn thành</center></td>
-                        <td><center>Nhân viên tham gia</center></td>
+                    <table class="table table-bordered table-striped" id="list-orders">
+                      <tr style="font-weight: bold; text-align: center;">
+                        <td>Đơn hàng</td>
+                        <td>Chi phí xử lý (VNĐ)</td>
+                        <td>Ngày xác nhận</td>
+                        <td>Ngày thực hiện</td>
+                        <td>Dự tính hoàn thành</td>
+                        <td>Kho xử lý</td>
+                        <td>Hành động</td>
                       </tr>
                       <tr>
                         <td>CB0005</td>
@@ -374,7 +376,8 @@
                         <td>30/10/2021 10:00:00</td>
                         <td>04/11/2021 08:00:00</td>
                         <td>04/11/2021 10:30:00</td>
-                        <td>Nguyễn Thị Hồng Anh, Phạm Lê Đức, Nguyễn Mạnh Phúc</td>
+                        <td>Kho Nhổn</td>
+                        <td><Button class="btn btn-sm btn-info button-themmoi" type="button" data-toggle="modal" data-target="#exampleModal">Chi tiết</Button></td>
                       </tr>
                       <tr>
                         <td>HA3179</td>
@@ -382,15 +385,17 @@
                         <td>25/10/2021 14:32:20</td>
                         <td>04/11/2021 08:00:00</td>
                         <td>04/11/2021 13:30:00</td>
-                        <td>Nguyễn Thị Hồng Anh, Phạm Lê Đức, Nguyễn Mạnh Phúc</td>
+                        <td>Kho Nhổn</td>
+                        <td><Button class="btn btn-sm btn-info button-themmoi" type="button" data-toggle="modal" data-target="#exampleModal">Chi tiết</Button></td>
                       </tr>
                       <tr>
                         <td>HD0962</td>
                         <td>12.000.000</td>
-                        <td>30/10/2021 10:09:22</center></td>
+                        <td>30/10/2021 10:09:22</td>
                         <td>04/11/2021 09:15:00</td>
                         <td>04/11/2021 14:00:00</td>
-                        <td>Nguyễn Thị Hồng Anh, Phạm Lê Đức, Nguyễn Mạnh Phúc</td>
+                        <td>Kho ĐHBK</td>
+                        <td><Button class="btn btn-sm btn-info button-themmoi" type="button" data-toggle="modal" data-target="#exampleModal">Chi tiết</Button></td>
                       </tr>
                       <tr>
                         <td>AH7896</td>
@@ -398,7 +403,8 @@
                         <td>15/10/2021 09:32:17	</td>
                         <td>04/11/2021 08:00:00</td>
                         <td>04/11/2021 14:30:00</td>
-                        <td>Nguyễn Thị Hồng Anh, Phạm Lê Đức, Nguyễn Mạnh Phúc</td>
+                        <td>Kho ĐHBK</td>
+                        <td><Button class="btn btn-sm btn-info button-themmoi" type="button" data-toggle="modal" data-target="#exampleModal">Chi tiết</Button></td>
                       </tr>
                       <tr>
                         <td>SH0021</td>
@@ -406,7 +412,8 @@
                         <td>20/10/2021 10:02:22</td>
                         <td>04/11/2021 09:00:00</td>
                         <td>04/11/2021 13:30:00</td>
-                        <td>Nguyễn Thị Hồng Anh, Phạm Lê Đức, Nguyễn Mạnh Phúc</td>
+                        <td>Kho ĐHBK</td>
+                        <td><Button class="btn btn-sm btn-info button-themmoi" type="button" data-toggle="modal" data-target="#exampleModal">Chi tiết</Button></td>
                       </tr>
                       <tr>
                         <td>AS0083</td>
@@ -414,7 +421,8 @@
                         <td>27/10/2021 10:09:20	</td>
                         <td>04/11/2021 08:00:00</td>
                         <td>05/11/2021 09:30:00</td>
-                        <td>Nguyễn Thị Hồng Anh, Phạm Lê Đức, Nguyễn Mạnh Phúc</td>
+                        <td>Kho ĐHBK</td>
+                        <td><Button class="btn btn-sm btn-info button-themmoi" type="button" data-toggle="modal" data-target="#exampleModal">Chi tiết</Button></td>
                       </tr>
                       <tr>
                         <td>VS0038</td>
@@ -422,298 +430,157 @@
                         <td>30/10/2021 10:00:00</td>
                         <td>04/11/2021 10:00:00</td>
                         <td>04/11/2021 15:00:00</td>
-                        <td>Nguyễn Thị Hồng Anh, Phạm Lê Đức, Nguyễn Mạnh Phúc</td>
+                        <td>Kho ĐHBK</td>
+                        <td><Button class="btn btn-sm btn-info button-themmoi" type="button" data-toggle="modal" data-target="#exampleModal">Chi tiết</Button></td>
                       </tr>
-                      <!-- <tr>
-                        <td>PD0212</td>
-                        <td>15.000.000</td>
-                        <td>17/10/2021 08:09:00	</td>
-                        <td>04/11/2021 08:00:00</td>
-                        <td>04/11/2021 14:00:00</td>
-                        <td>Nguyễn Thị Hồng Anh, Phạm Lê Đức, Nguyễn Mạnh Phúc</td>
-                      </tr> -->
                       <tr>
                         <td>PS9666</td>
                         <td>12.000.000</td>
                         <td>20/10/2021 16:45:33</td>
                         <td>04/11/2021 13:00:00</td>
                         <td>04/11/2021 15:00:00</td>
-                        <td>Nguyễn Thị Hồng Anh, Phạm Lê Đức, Nguyễn Mạnh Phúc</td>
+                        <td>Kho tổng hợp cục hậu cần</td>
+                        <td><Button class="btn btn-sm btn-info button-themmoi" type="button" data-toggle="modal" data-target="#exampleModal">Chi tiết</Button></td>
                       </tr>
                     </table>
                   </div>
-                  <div class="card-pane-right bg-success pt-2 pb-2 pl-4 pr-4">
-                    <!-- /.description-block -->
-                    <div class="description-block mb-4">
-                      <!-- <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div> -->
-                      <h5 class="description-header">111.000.000VNĐ</h5>
-                      <span class="description-text">Tổng chi phí</span>
-                    </div>
-                    <!-- /.description-block -->
-                    <div class="description-block">
-                      <!-- <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div> -->
-                      <h5 class="description-header">05/10/2021</h5>
-                      <span class="description-text">Ngày hoàn thành</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div><!-- /.card-pane-right -->
                 </div><!-- /.d-md-flex -->
               </div>
               <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-            <div class="row">
-              <!-- /.col -->
-            </div>
-            <!-- /.row -->
-
-
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-
-          <div class="col-md-1">
-            <!-- Info Boxes Style 2 -->
-            <div class="info-box mb-3 bg-warning" style="min-height:20px;">
-              <!-- <span class="info-box-icon"><i class="fas fa-book"></i></span> -->
-
-              <div class="info-box-content">
-                <span class="info-box-text">CB0005</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-success" style="min-height:20px;">
-              <!-- <span class="info-box-icon"><i class="fas fa-book"></i></span> -->
-
-              <div class="info-box-content">
-                <span class="info-box-text">HA3179</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-danger" style="min-height:20px;">
-              <!-- <span class="info-box-icon"><i class="fas fa-book"></i></span> -->
-
-              <div class="info-box-content">
-                <span class="info-box-text">HD0962</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <div class="info-box mb-3 bg-blue" style="min-height:20px;">
-              <!-- <span class="info-box-icon"><i class="fas fa-book"></i></span> -->
-
-              <div class="info-box-content">
-                <span class="info-box-text">AH7896</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-orange" style="min-height:20px;">
-              <!-- <span class="info-box-icon"><i class="fas fa-book"></i></span> -->
-
-              <div class="info-box-content">
-                <span class="info-box-text">SH0021</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-pink" style="min-height:20px;">
-              <!-- <span class="info-box-icon"><i class="fas fa-book"></i></span> -->
-
-              <div class="info-box-content">
-                <span class="info-box-text">AS0083</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-purple" style="min-height:20px;">
-              <!-- <span class="info-box-icon"><i class="fas fa-book"></i></span> -->
-
-              <div class="info-box-content">
-                <span class="info-box-text">VS0038</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <div class="info-box mb-3 bg-sienna" style="min-height:20px;">
-              <!-- <span class="info-box-icon"><i class="fas fa-book"></i></span> -->
-
-              <div class="info-box-content">
-                <span class="info-box-text">PS9666</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-          </div>
-          
-          <!-- /.col -->
-        </div>
-        <div class="row">
-          <!-- TABLE: LATEST ORDERS -->
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Lịch trình khả dụng</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                  <table class="table m-0">
-                    <thead>
-                    <tr>
-                      <th>Nhân viên</th>
-                      <th>8:00:00</th>
-                      <th>8:30:00</th>
-                      <th>9:00:00</th>
-                      <th>9:30:00</th>
-                      <th>10:00:00</th>
-                      <th>10:30:00</th>
-                      <th>11:00:00</th>
-                      <th>11:30:00</th>
-                      <th>12:00:00</th>
-                      <th>12:30:00</th>
-                      <th>13:00:00</th>
-                      <th>13:30:00</th>
-                      <th>14:00:00</th>
-                      <th>14:30:00</th>
-                      <th>15:00:00</th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td>Nguyễn Thị Hồng Anh</td>
-                      <td class="bg-warning">Tạo  YC</td>
-                      <td class="half-cell-warning-75-success"  style="text-align: left">In YC</td>
-                      <td class="bg-success">In YC</td>
-                      <td class="bg-success">Chuẩn bị</td>
-                      <td class="bg-warning">Đóng gói</td>
-                      <td class="half-cell-warning-left"></td>
-                      <td class="bg-danger">Chuẩn bị</td>
-                      <td class="bg-danger"></td>
-                      <td class="half-cell-danger-left"></td>
-                      <td></td>
-                      <td class="bg-success">Đóng gói</td>
-                      <td class="half-cell-success-sienna"></td>
-                      <td class="bg-sienna">In YC</td>
-                      <td class="bg-sienna">Chuẩn bị</td>
-                      <td class="bg-sienna">Đóng gói</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>Phạm Lê Đức</td>
-                      <td class="bg-success">Tạo  YC</td>
-                      <td class="half-cell-success-warning"></td>
-                      <td class="bg-warning">Chuẩn bị</td>
-                      <td class="half-cell-warning-danger"></td>
-                      <td class="bg-danger">Tạo YC</td>
-                      <td class="bg-danger" style="text-align:right">In YC</td>
-                      <td class="bg-pink">Tạo YC</td>
-                      <td class="bg-pink">In YC</td>
-                      <td></td>
-                      <td></td>
-                      <td class="bg-orange">Chuẩn bị</td>
-                      <td class="bg-orange">Đóng gói</td>
-                      <td class="bg-purple">Chuẩn bị</td>
-                      <td class="bg-purple"></td>
-                      <td class="bg-pink">Chuẩn bị</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>Nguyễn Mạnh Phúc</td>
-                      <td class="bg-blue">Tạo YC</td>
-                      <td class="bg-blue">In YC</td>
-                      <td class="bg-orange">Tạo YC</td>
-                      <td class="bg-orange">In YC</td>
-                      <td class="bg-purple">Tạo YC</td>
-                      <td class="bg-purple">In YC</td>
-                      <td class="bg-blue">Chuẩn bị</td>
-                      <td class="bg-blue"></td>
-                      <td></td>
-                      <td></td>
-                      <td class="bg-sienna">Tạo YC</td>
-                      <td class="bg-danger">Đóng gói</td>
-                      <td class="bg-danger"></td>
-                      <td class="bg-blue">Đóng gói</td>
-                      <td class="bg-purple">Đóng gói</td>
-                    </tr>
-                    <!-- <tr>
-                      <td>Nguyễn Hồng Ánh</td>
-                      <td></td>
-                      <td class="bg-warning">In  YC</td>
-                      <td></td>
-                      <td></td>
-                      <td class="half-cell-success-right"></td>
-                      <td class="bg-success">Kiểm kê chất lượng</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr> -->
-                    <!-- <tr>
-                      <td>Nguyễn Khánh Linh</a></td>
-                      <td class="bg-danger">Tạo  YC</td>
-                      <td></td>
-                      <td></td>
-                      <td class="bg-success">Lấy hàng</td>
-                      <td class="half-cell-success-left"></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr> -->
-                    <!-- <tr>
-                      <td>Nguyễn Trí Hùng</a></td>
-                      <td></td>
-                      <td class="bg-danger">In  YC</td>
-                      <td class="bg-danger">Lấy hàng</td>
-                      <td class="bg-warning">Kiểm kê chất lượng</td>
-                      <td></td>
-                      <td></td>
-                      <td class="bg-success">Đóng gói</td>
-                      <td class="half-cell-success-left"></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>Trần Phi Hùng</a></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td class="bg-danger">Kiểm kê chất lượng</td>
-                      <td class="bg-danger">Đóng gói</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr> -->
-                    </tbody>
-                  </table>
-                </div>
-                <!-- /.table-responsive -->
-              </div>
-              <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <a href="pending-order-2.html" class="btn btn-sm btn-info float-left">Lưu lịch trình</a>
-                <a href="create-route.html" class="btn btn-sm btn-success float-left" style="margin-left: 1%">Tạo lộ trình</a>
-                <a href="schedule-plans.html" class="btn btn-sm btn-secondary float-right">Đóng</a>
+                <a href="schedule-plans.html" class="btn btn-sm btn-secondary float-left"><i class="fa-solid fa-arrow-left"></i> Quay lại</a>
+                <a href="create-route.html" class="btn btn-sm btn-success float-left" style="margin-left: 1%">Tạo lộ trình <i class="fa-solid fa-arrow-right"></i></a>
               </div>
-              <!-- /.card-footer -->
+              <!-- card-footer -->
             </div>
+            <!-- /.card -->
           </div>
         </div>
-        <!-- /.row -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Chi tiết lập lịch của đơn hàng</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <!-- TABLE: LATEST ORDERS -->
+                  <div class="col-md-12">
+                    <div class="card">
+                      <div class="card-header border-transparent">
+                        <h3 class="card-title">Lịch trình khả dụng</h3>
+                        <!-- <div class="card-tools">
+                          <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                          </button>
+                          <button type="button" class="btn btn-tool" data-card-widget="remove">
+                            <i class="fas fa-times"></i>
+                          </button>
+                        </div> -->
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body p-0">
+                        <div class="table-responsive">
+                          <table class="table m-0">
+                            <thead>
+                            <tr>
+                              <th>Nhân viên</th>
+                              <th>8:00:00</th>
+                              <th>8:30:00</th>
+                              <th>9:00:00</th>
+                              <th>9:30:00</th>
+                              <th>10:00:00</th>
+                              <th>10:30:00</th>
+                              <th>11:00:00</th>
+                              <th>11:30:00</th>
+                              <th>12:00:00</th>
+                              <th>12:30:00</th>
+                              <th>13:00:00</th>
+                              <th>13:30:00</th>
+                              <th>14:00:00</th>
+                              <th>14:30:00</th>
+                              <th>15:00:00</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr style="height: 20px;">
+                              <td>Nguyễn Hồng Anh</td>
+                              <td class="bg-warning">Tạo  YC</td>
+                              <td class="half-cell-warning-75-success"  style="text-align: left">In YC</td>
+                              <td class="bg-success">In YC</td>
+                              <td class="bg-success">Chuẩn bị</td>
+                              <td class="bg-warning">Đóng gói</td>
+                              <td class="half-cell-warning-left"></td>
+                              <td class="bg-danger">Chuẩn bị</td>
+                              <td class="bg-danger"></td>
+                              <td class="half-cell-danger-left"></td>
+                              <td></td>
+                              <td class="bg-success">Đóng gói</td>
+                              <td class="half-cell-success-sienna"></td>
+                              <td class="bg-sienna">In YC</td>
+                              <td class="bg-sienna">Chuẩn bị</td>
+                              <td class="bg-sienna">Đóng gói</td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr style="height: 20px;">
+                              <td>Phạm Lê Đức</td>
+                              <td class="bg-success">Tạo  YC</td>
+                              <td class="half-cell-success-warning"></td>
+                              <td class="bg-warning">Chuẩn bị</td>
+                              <td class="half-cell-warning-danger"></td>
+                              <td class="bg-danger">Tạo YC</td>
+                              <td class="bg-danger" style="text-align:right">In YC</td>
+                              <td class="bg-pink">Tạo YC</td>
+                              <td class="bg-pink">In YC</td>
+                              <td></td>
+                              <td></td>
+                              <td class="bg-orange">Chuẩn bị</td>
+                              <td class="bg-orange">Đóng gói</td>
+                              <td class="bg-purple">Chuẩn bị</td>
+                              <td class="bg-purple"></td>
+                              <td class="bg-pink">Chuẩn bị</td>
+                              <td></td>
+                            </tr>
+                            <tr style="height: 20px;">
+                              <td>Nguyễn Mạnh Phúc</td>
+                              <td class="bg-blue">Tạo YC</td>
+                              <td class="bg-blue">In YC</td>
+                              <td class="bg-orange">Tạo YC</td>
+                              <td class="bg-orange">In YC</td>
+                              <td class="bg-purple">Tạo YC</td>
+                              <td class="bg-purple">In YC</td>
+                              <td class="bg-blue">Chuẩn bị</td>
+                              <td class="bg-blue"></td>
+                              <td></td>
+                              <td></td>
+                              <td class="bg-sienna">Tạo YC</td>
+                              <td class="bg-danger">Đóng gói</td>
+                              <td class="bg-danger"></td>
+                              <td class="bg-blue">Đóng gói</td>
+                              <td class="bg-purple">Đóng gói</td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                      </div>
+                      <!-- /.card-body -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+              <button type="button" class="btn btn-primary " data-dismiss="modal">Xác nhận</button>
+              </div>
+          </div>
+          </div>
+        </div>
       </div><!--/. container-fluid -->
     </section>
     <!-- /.content -->
@@ -760,5 +627,28 @@
 <script src="../dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../dist/js/pages/dashboard2.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../plugins/jszip/jszip.min.js"></script>
+<script src="../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $("#list-orders").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+  });
+</script>
 </body>
 </html>
