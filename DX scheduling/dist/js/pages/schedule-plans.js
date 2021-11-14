@@ -16,13 +16,24 @@ $(function () {
     var salesChart = new Chart($salesChart, {
       type: 'bar',
       data: {
-        labels: ['#1', '#2', '#3', '#4', '#5', '#6', '#7'],
+        labels: ['LTXM001', 'LTXM002', 'LTXM003', 'LTXM004', 'LTXM005', 'LTXM006', 'LTXM004'],
         datasets: [
           {
             backgroundColor: '#007bff',
             borderColor: '#007bff',
-            data: [111, 120, 112, 98, 140, 141, 142]
+            data: [37.5, 50, 100, 25, 100, 100, 0]
+          },
+          {
+            backgroundColor: '#ced4da',
+            borderColor: '#ced4da',
+            data: [62.5, 50, 0, 75, 0, 0, 100]
           }
+          // ,
+          // {
+          //   backgroundColor: '#00a65a',
+          //   borderColor: '#00a65a',
+          //   data: [0, 60, 100, 100, 80, 80, 60]
+          // }
         ]
       },
       options: {
@@ -51,14 +62,14 @@ $(function () {
               beginAtZero: true,
   
               // Include a dollar sign in the ticks
-              callback: function (value) {
-                if (value >= 1000) {
-                  value /= 1000
-                  value += 'k'
-                }
+              // callback: function (value) {
+              //   if (value >= 1000) {
+              //     value /= 1000
+              //     value += 'k'
+              //   }
   
-                return '$' + value
-              }
+              //   return value + '%'
+              // }
             }, ticksStyle)
           }],
           xAxes: [{
@@ -76,11 +87,11 @@ $(function () {
     // eslint-disable-next-line no-unused-vars
     var visitorsChart = new Chart($visitorsChart, {
       data: {
-        labels: ['#1', '#2', '#3', '#4', '#5', '#6', '#7'],
+        labels: ['LTXM001', 'LTXM002', 'LTXM003', 'LTXM004', 'LTXM005', 'LTXM006', 'LTXM004'],
         datasets: [
         {
           type: 'line',
-          data: [840, 860, 840, 820, 900, 820, 880],
+          data: [60, 60, 100, 100, 80, 80, 60],
           backgroundColor: 'tansparent',
           borderColor: '#ced4da',
           pointBorderColor: '#ced4da',
@@ -114,7 +125,7 @@ $(function () {
             },
             ticks: $.extend({
               beginAtZero: true,
-              suggestedMax: 200
+              suggestedMax: 100
             }, ticksStyle)
           }],
           xAxes: [{

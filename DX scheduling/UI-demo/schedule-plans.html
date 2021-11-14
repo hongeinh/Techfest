@@ -345,7 +345,7 @@
             <div class="card">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Bảng so sánh thời gian xử lý giữa các lịch trình</h3>
+                  <h3 class="card-title">Bảng so sánh phần trăm nhân công làm việc trong kế hoạch xuất kho</h3>
                 </div>
               </div>
               <div class="card-body">
@@ -357,7 +357,7 @@
                 </div>
                 <div class="d-flex flex-row justify-content-end">
                   <span>
-                    <i class="fas fa-square text-gray"></i> Thời gian
+                    <i class="fas fa-square text-gray"></i>Tỉ lệ nhân công làm việc
                   </span>
                 </div>
               </div>
@@ -368,7 +368,7 @@
             <div class="card">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Bảng so sánh chi phí giữa các lịch trình</h3>
+                  <h3 class="card-title">Bảng so sánh số đơn xử lý trong từng kho của kế hoạch xuất kho</h3>
                 </div>
               </div>
               <div class="card-body">
@@ -378,7 +378,10 @@
 
                 <div class="d-flex flex-row justify-content-end">
                   <span class="mr-2">
-                    <i class="fas fa-square text-primary"></i> Chi phí
+                    <i class="fas fa-square text-primary"></i>Kho Nhổn
+                  </span>
+                  <span>
+                    <i class="fas fa-square text-gray" ></i>Kho ĐHBK Hà Nội
                   </span>
                 </div>
               </div>
@@ -392,7 +395,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Danh sách các lịch trình khả dụng</h3>
+                <h3 class="card-title">Các kế hoạch xuất kho khả dụng</h3>
                 <a href="pending-orders.html" class="btn btn-sm btn-secondary float-right"><i class="fa-solid fa-arrow-left"></i>  Quay lại</a>
               </div>
               <!-- /.card-header -->
@@ -401,11 +404,12 @@
                   <table class="table table-bordered table-striped" id="list-orders">
                     <thead>
                     <tr>
-                      <th>Lịch trình</th>
+                      <th>Mã kế hoạch</th>
                       <th>Tổng chi phí</th>
                       <!-- <th>Tổng thời gian</th> -->
                       <th>Thời gian bắt đầu</th>
                       <th>Thời gian kết thúc dự kiến</th>
+                      <th>Kho tham gia</th>
                       <th>Số nhân viên</th>
                       <th>Thao tác</th>
                     </tr>
@@ -414,9 +418,9 @@
                     <tr>
                       <td>LTXM001</td>
                       <td>111.000.000</td>
-                      <!-- <td>840</td> -->
                       <td>04/11/2021 08:00:00</td>
                       <td>05/11/2021 12:30:00</td>
+                      <td>Kho ĐHBK Hà Nội, Kho Nhổn</td>
                       <td>3</td>
                       <td><a href="schedule-detail.html" class="btn btn-sm btn-info float-left">Chi tiết</a></td>
                     </tr>
@@ -426,6 +430,7 @@
                       <!-- <td>900</td> -->
                       <td>04/11/2021 08:00:00</td>
                       <td>05/11/2021 08:30:00</td>
+                      <td>Kho Nhổn</td>
                       <td>4</td>
                       <td><a  class="btn btn-sm btn-info float-left">Chi tiết</a></td>
                     </tr>
@@ -435,6 +440,7 @@
                       <!-- <td>860</td> -->
                       <td>04/11/2021 13:00:00</td>
                       <td>07/11/2021 13:20:00</td>
+                      <td>Kho ĐHBK Hà Nội, Kho Nhổn</td>
                       <td>3</td>
                       <td><a  class="btn btn-sm btn-info float-left">Chi tiết</a></td>
                     </tr>
@@ -444,6 +450,7 @@
                       <!-- <td>880</td> -->
                       <td>04/11/2021 13:00:00</td>
                       <td>07/11/2021 13:10:00</td>
+                      <td>Kho ĐHBK Hà Nội</td>
                       <td>3</td>
                       <td><a  class="btn btn-sm btn-info float-left">Chi tiết</a></td>
                     </tr>
@@ -453,6 +460,7 @@
                       <!-- <td>840</td> -->
                       <td>04/11/2021 13:00:00</td>
                       <td>05/11/2021 12:00:00</td>
+                      <td>Kho Nhổn</td>
                       <td>5</td>
                       <td><a  class="btn btn-sm btn-info float-left">Chi tiết</a></td>
                     </tr>
@@ -462,6 +470,7 @@
                       <!-- <td>820</td> -->
                       <td>04/11/2021 08:00:00</td>
                       <td>05/11/2021 12:10:00</td>
+                      <td>Kho Nhổn</td>
                       <td>4</td>
                       <td><a  class="btn btn-sm btn-info float-left">Chi tiết</a></td>
                     </tr>
@@ -471,6 +480,7 @@
                       <!-- <td>820</td> -->
                       <td>04/11/2021 08:00:00</td>
                       <td>06/11/2021 12:10:00</td>
+                      <td>Kho ĐHBK Hà Nội, Kho Nhổn</td>
                       <td>5</td>
                       <td><a  class="btn btn-sm btn-info float-left">Chi tiết</a></td>
                     </tr>
