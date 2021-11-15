@@ -325,12 +325,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý xuất hàng</h1>
+            <h1>Lập lịch xử lý xuất đơn (1/3)  </h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Danh sách đơn hàng</li>
+              <li class="breadcrumb-item active">Danh sách các nhiệm vụ xuất kho</li>
             </ol>
           </div>
         </div>
@@ -345,221 +345,84 @@
             <div class="card">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Danh sách đơn hàng</h3>
+                <h3 class="card-title">Danh sách các nhiệm vụ xuất kho</h3>
+                <a href="schedule-plans.html"><button class="btn btn-success" style="float: right; margin-left: 0.2%;" id="quick-create-btn">Tiếp<i class="fa-solid fa-arrow-right"></i></button></a>
+                <a href="pending-orders.html"><button class="btn btn-secondary" style="float: right;"><i class="fa-solid fa-arrow-left"></i> Quay lại</button></a>    
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <Button class="btn btn-sm btn-success button-themmoi" type="button" data-toggle="modal" data-target="#exampleModal">Thêm mới</Button>
                 <table id="example1" class="table table-bordered table-striped">
-                    <thead>
-                      <tr>
-                        <th>Mã đơn</th>
-                        <th>Mã khách hàng</th>
-                        <th>Mức độ</th>
-                        <th>Ngày tiếp nhận</th>
-                        <th>Ngày kết thúc</th>
-                        <th>Trạng thái</th>
-                        <th>Địa chỉ</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody style="text-align: center">
-                      <tr>
-                        <td>AA9062</td>
-                        <td>KHNJNAKL31</td>
-                        <td>
-                          <select class="custom-select">
-                            <option >Tiêu chuẩn</option>
-                            <option selected value="1">Trung bình</option>
-                            <option value="2">Gấp</option>
-                          </select>
+                  <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên nhiệm vụ</th>
+                        <th>Người thực hiện</th>
+                        <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Yêu cầu xuất hàng</td>
+                        <td>Giám sát kho, Quản lý kho, Thủ kho, Nhân viên kho</td>
+                        <td style="display: flex;">
+                            
+                            <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                         </td>
-                        <td>28/10/2021 09:13:20</td>
-                        <td>02/11/2021 13:51:22</td>
-                        <td style="color: #28a745;">Đang xử lý</td>
-                        <td style="text-align: left">17 Ô Quan Chưởng, Hoàn Kiếm district, Hanoi</td>
-                        <td><input type="checkbox" name="name1" />&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td>HD0962</td>
-                        <td>KHNJNAKL12</td>
-                        <td>
-                          <select class="custom-select">
-                            <option selected>Tiêu chuẩn</option>
-                            <option value="1">Trung bình</option>
-                            <option value="2">Gấp</option>
-                          </select>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Kiểm tra số lượng hàng hóa tồn kho</td>
+                        <td>Thủ kho, Nhân viên kho</td>
+                        <td style="display: flex;">
+                          
+                          <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                          <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                         </td>
-                        <td>30/10/2021 10:09:22</td>
-                        <td></td>
-                        <td style="color: orange;">Chưa xử lý</td>
-                        <td style="text-align: left">319 Đường Nguyễn Văn Cừ, Ngọc Lâm, Long Biên district, Hanoi</td>
-                        <td><input type="checkbox" name="name1" />&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td>PD0212</td>
-                        <td>KHNJNAKL02</td>
-                        <td>
-                          <select class="custom-select">
-                            <option selected>Tiêu chuẩn</option>
-                            <option value="1">Trung bình</option>
-                            <option selected value="2">Gấp</option>
-                          </select>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Lập phiếu xuất kho</td>
+                        <td>Giám sát kho, Quản lý kho, Thủ kho, Nhân viên kho</td>
+                        <td style="display: flex;">
+                          
+                          <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                          <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                         </td>
-                        <td>17/10/2021 08:09:00</td>
-                        <td></td>
-                        <td style="color: orange;">Chưa xử lý</td>
-                        <td style="text-align: left">18 Nguyễn Bỉnh Khiêm, Nguyễn Du, Hai Bà Trưng District, Hanoi</td>
-                        <td><input type="checkbox" name="name1" />&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td>SH0021</td>
-                        <td>KHNJNAKL02</td>
-                        <td>
-                          <select class="custom-select">
-                            <option selected>Tiêu chuẩn</option>
-                            <option value="1">Trung bình</option>
-                            <option value="2">Gấp</option>
-                          </select>
-                        </td>
-                        <td>20/10/2021 10:02:22</td>
-                        <td></td>
-                        <td style="color: orange;">Chưa xử lý</td>
-                        <td style="text-align: left">7 Đường Âu Cơ, Quang An, Tây Hồ, Hanoi</td>
-                        <td><input type="checkbox" name="name1" />&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td>CB0005</td>
-                        <td>KHNJNAKL01</td>
-                        <!-- <td><span class="middle bade badge-success">Bình thường</span></td> -->
-                        <td>
-                          <select class="custom-select">
-                            <option >Tiêu chuẩn</option>
-                            <option selected value="1">Trung bình</option>
-                            <option value="2">Gấp</option>
-                          </select>
-                        </td>
-                        <td>30/10/2021 10:00:00</td>
-                        <td></td>
-                        <td style="color: orange;">Chưa xử lý</td>
-                        <td style="text-align: left">5 Nguyễn Khánh Toàn, Quan Hoa, Cầu Giấy district, Hanoi</td>
-                        <td><input type="checkbox" name="name1" />&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td>VS0038</td>
-                        <td>KHNJNAKL03</td>
-                        <td>
-                          <select class="custom-select">
-                            <option selected>Tiêu chuẩn</option>
-                            <option value="1">Trung bình</option>
-                            <option value="2">Gấp</option>
-                          </select>
-                        </td>
-                        <td>27/10/2021 11:45:20</td>
-                        <td></td>
-                        <td style="color: orange;">Chưa xử lý</td>
-                        <td style="text-align: left">28 Kim Ngưu, Hoang Van Thu, Hoang Mai district, Hanoi</td>
-                        <td><input type="checkbox" name="name1" />&nbsp;</td>
-                      </tr>
-
-                      <tr>
-                        <td>HA3179</td>
-                        <td>KHNJNAKL03</td>
-                        <td>
-                          <select class="custom-select">
-                            <option selected>Tiêu chuẩn</option>
-                            <option value="1">Trung bình</option>
-                            <option value="2">Gấp</option>
-                          </select>
-                        </td>
-                        <td>25/10/2021 14:32:20</td>
-                        <td></td>
-                        <td style="color: orange;">Chưa xử lý</td>
-                        <td style="text-align: left">17 Hàng Khoai, Dong Xuan, Hoàn Kiếm district, Hanoi</td>
-                        <td><input type="checkbox" name="name1" />&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td>AS0083</td>
-                        <td>KHNJNAKL31</td>
-                        <td>
-                          <select class="custom-select">
-                            <option selected>Tiêu chuẩn</option>
-                            <option value="1">Trung bình</option>
-                            <option value="2">Gấp</option>
-                          </select>
-                        </td>
-                        <td>27/10/2021 10:09:20</td>
-                        <td></td>
-                        <td style="color: orange;">Chưa xử lý</td>
-                        <td style="text-align: left">21 Hàng Bài, Hoàn Kiếm district, Hanoi</td>
-                        <td><input type="checkbox" name="name1" />&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td>PS9666</td>
-                        <td>KHNJNAKL02</td>
-                        <td>
-                          <select class="custom-select">
-                            <option selected>Tiêu chuẩn</option>
-                            <option value="1">Trung bình</option>
-                            <option value="2">Gấp</option>
-                          </select>
-                        </td>
-                        <td>20/10/2021 16:45:33</td>
-                        <td></td>
-                        <td style="color: orange;">Chưa xử lý</td>
-                        <td style="text-align: left">33 Bạch Mai, Hai Ba Trung district, Ha Noi</td>
-                        <td><input type="checkbox" name="name1" />&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td>AH7896</td>
-                        <td>KHNJNAKL04</td>
-                        <!-- <td><span class="middle bade badge-success">Bình thường</span></td> -->
-                        <td>
-                          <select class="custom-select">
-                            <option selected>Tiêu chuẩn</option>
-                            <option value="1">Trung bình</option>
-                            <option value="2">Gấp</option>
-                          </select>
-                        </td>
-                        <td>15/10/2021 09:32:17</td>
-                        <td></td>
-                        <td style="color: orange;">Chưa xử lý</td>
-                        <td style="text-align: left">19 Thụy Khuê, Tay Ho district, Hanoi</td>
-                        <td><input type="checkbox" name="name1" />&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td>VS0992</td>
-                        <td>KHNJNAKL31</td>
-                        <td>
-                          <select class="custom-select">
-                            <option selected>Tiêu chuẩn</option>
-                            <option value="1">Trung bình</option>
-                            <option value="2">Gấp</option>
-                          </select>
-                        </td>
-                        <td>27/10/2021 11:45:20</td>
-                        <td></td>
-                        <td style="color: orange;">Chưa xử lý</td>
-                        <td style="text-align: left">28 Kim Ngưu, Hoang Van Thu, Hoang Mai district, Hanoi</td>
-                        <td><input type="checkbox" name="name1" />&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td>ZM1628</td>
-                        <td>KHNJNAKL31</td>
-                        <td>
-                          <select class="custom-select">
-                            <option selected>Tiêu chuẩn</option>
-                            <option value="1">Trung bình</option>
-                            <option value="2">Gấp</option>
-                          </select>
-                        </td>
-                        <td>28/10/2021 09:13:20</td>
-                        <td>01/11/2021 17:26:35</td>
-                        <td style="color: red;">Đã xử lý</td>
-                        <td style="text-align: left">16 ngõ 203 Hồng Hà, Phuc Tan, Hoàn Kiếm district, Hanoi</td>
-                        <td><input type="checkbox" name="name1" />&nbsp;</td>
-                      </tr>
-                    </tbody>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Chuẩn bị hàng hóa</td>
+                      <td>Nhân viên kho</td>
+                      <td style="display: flex;">
+                          
+                          <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                          <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>5</td>
+                      <td>Đóng gói</td>
+                      <td>Nhân viên kho</td>
+                      <td style="display: flex;">
+                        
+                        <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>6</td>
+                      <td>Cập nhật thông tin kho</td>
+                      <td>Giám sát kho, Quản lý kho, Thủ kho, Nhân viên kho</td>
+                      <td style="display: flex;">
+                        
+                        <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                  </tr>
+                  </tbody>
                 </table>
               </div>
               <!-- Modal -->
@@ -567,7 +430,7 @@
                 <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tạo mới đơn hàng</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Thêm nhiệm vụ</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -575,99 +438,48 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-row">
-                              <div class="form-group col-md-6">
-                                <label for="inputEmail4">Mã đơn</label>
-                                <input type="text" class="form-control" placeholder="MOD311FAGGG1" value="">
-                              </div>
-                              <div class="form-group col-md-6">
-                                <label for="inputPassword4">Mã khách hàng</label>
-                                <input type="text" class="form-control" value="" placeholder="KHHFAOOUUQ01">
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="form-group col-md-6">
-                                <label for="inputAddress">Ngày nhâp hàng</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="dd/mm/yyy hours:min" >
-                              </div>
-                              <div class="form-group col-md-6">
-                                <label for="inputAddress2">Giá thành(triệu)</label>
-                              <input type="text" class="form-control" id="inputAddress2" placeholder="Triệu đồng" value="">
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="form-group col-md-4">
-                                <label>Mức độ ưu tiên</label>
-                                <select id="inputGroupGood" class="form-control">
-                                  <option selected>Tiêu chuẩn</option>
-                                  <option>Trung bình</option>
-                                  <option>Gấp</option>
-                                </select>
+                              <div class="form-group col-md-12">
+                                <label for="inputEmail4">Tên nhiệm vụ</label>
+                                <input type="text" class="form-control" placeholder="In phiếu yêu cầu" value="">
                               </div>
                             </div>
                             <hr>
-                            <h5>Thêm sản phẩm</h5>
-                            <div class="form-row">
-                              <div class="form-group col-md-6">
-                                <label for="inputEmail4">Mã sản phẩm</label>
-                                <input type="text" class="form-control" placeholder="MOD311FAGGG1" value="">
-                              </div>
-                              <div class="form-group col-md-6">
-                                <label for="inputPassword4">Tên sản phẩm</label>
-                                <input type="text" class="form-control" value="" placeholder="">
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="form-group col-md-6">
-                                <label for="inputAddress">Kích thước</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="m/m/m" >
-                              </div>
-                              <div class="form-group col-md-6">
-                                <label for="inputAddress2">Giá thành(triệu)</label>
-                              <input type="text" class="form-control" id="inputAddress2" placeholder="Triệu đồng" value="">
-                              </div>
-                            </div>
+                            <h5>Thêm vị trí làm việc</h5>
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="inputAddress">Số lượng</label>
                                 <input type="number" class="form-control" id="inputAddress" placeholder="dd/mm/yyy hours:min" >
                               </div>
                               <div class="form-group col-md-6">
-                                <label for="inputAddress2">Nhóm hàng</label>
+                                <label for="inputAddress2">Vị trí</label>
                                 <select id="inputGroupGood" class="form-control">
-                                  <option selected>Đồ điện tử</option>
-                                  <option>Đồ ăn</option>
-                                  <option>Đồ gia dụng</option>
+                                  <option>Quản lý kho</option>
+                                  <option>Thủ kho</option>
+                                  <option selected>Nhân viên kho</option>
+                                  <option>Giám sát kho</option>
                                 </select>
                               </div>
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
-                                <button class="btn btn-outline-success">Thêm</button>
+                                <button class="btn btn-success">Thêm</button>
                               </div>
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-12">
-                                <label>Danh sách sản phẩm trong đơn</label>
+                                <label>Danh sách nhiệm vụ bổ sung</label>
                                 <table id="example2" class="table table-bordered table-striped">
                                   <thead>
                                     <tr>
-                                      <td>Mã sản phẩm</td>
-                                      <td>Tên sản phẩm</td>
-                                      <td>Kích thước</td>
-                                      <td>Giá thành</td>
-                                      <td>Số lượng</td>
-                                      <td>Nhóm hàng</td>
+                                      <td>Tên nhiệm vụ</td>
+                                      <td>Vị trí</td>
                                       <td>Thao tác</td>
                                     </tr>
                                   </thead>
                                   <tbody>
                                     <tr>
-                                      <td>111</td>
-                                      <td>Bánh trung thu</td>
-                                      <td>0.1/0.6/0.2</td>
-                                      <td>60.000</td>
-                                      <td>12</td>
-                                      <td>Đồ ăn</td>
+                                      <td>In phiếu yêu cầu</td>
+                                      <td>Quản lý kho</td>
                                       <td style="display: flex;">
                                         <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
                                           <i class="fa-solid fa-pen-to-square"></i>
@@ -687,49 +499,6 @@
                     </div>
                 </div>
                 </div>
-              </div>
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Tạo mới đơn hàng</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                      </div>
-                      <div class="modal-body">
-                          <form>
-                              <div class="form-row">
-                                <div class="form-group col-md-6">
-                                  <label for="inputEmail4">Mã đơn</label>
-                                  <input type="text" class="form-control" placeholder="MOD311FAGGG1" value="MOD311FAGGG1">
-                                </div>
-                                <div class="form-group col-md-6">
-                                  <label for="inputPassword4">Mã khách hàng</label>
-                                  <input type="text" class="form-control" value="KHHFAOOUUQ01" placeholder="KHHFAOOUUQ01">
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="inputAddress">Ngày nhâp hàng</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="dd/mm/yyy hours:min" value="12/12/2021 08:40">
-                              </div>
-                              <div class="form-group">
-                                <label for="inputAddress2">Danh sách sản phẩm</label>
-                                <input type="text" class="form-control" id="inputAddress2" placeholder="Triệu đồng" value="60">
-                              </div>
-                          </form>
-                      </div>
-                      <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                      <button type="button" class="btn btn-primary">Lưu</button>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer clearfix">
-                <a href="task-position.html" class="btn btn-sm btn-warning float-right">Lập kế hoạch</a>
-                <a href="schedule-detail.html" class="btn btn-sm btn-success float-right" style="margin-right: 0.5%">Lập nhanh</a>
               </div>
               <!-- /.card-body -->
             </div>
@@ -808,5 +577,4 @@
   });
 </script>
 </body>
-
 </html>
