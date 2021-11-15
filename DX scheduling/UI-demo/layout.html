@@ -15,6 +15,10 @@
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
   <!-- cell style -->
   <link rel="stylesheet" href="../dist/css/cell.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- font awesome online -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
@@ -334,9 +338,22 @@
 
     <section class="content">
       <div class="container-fluid">
+        <!-- start thong ke chung -->
         <div class="card">
           <div class="card-body">
+
             <!-- Small boxes (Stat box) -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-group mb-4">
+                  <strong>Ngày&nbsp;&nbsp;</strong>
+                  <input type="month" class="" data-date-format="mm-yyyy" value="2021-10">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-success" type="button">Tìm kiếm</button>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="row">
               <div class="col-lg-3 col-6">
                 <!-- small box -->
@@ -401,19 +418,1023 @@
             </div>
           </div>
         </div>
+        <!-- end thong ke chung -->
+
+        <!-- start warehouse -->
+        <div class="card">
+          <div class="card-header">
+            <h4>Thông tin kho</h4>
+          </div>
+          <div class="card-body"></div>
+        </div>
+        <!-- end warehouse -->
+
+        <!-- start transportation -->
+        <div class="card">
+          <div class="card-header">
+            <h4>Thông tin vận chuyển</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card card-primary card-outline">
+                  <div class="card-header">
+                    <h3 class="card-title">
+                      <i class="far fa-chart-bar"></i>
+                      Trạng thái lộ trình
+                    </h3>
+                  </div>
+                  <canvas id="doughnutChart"></canvas>
+                  <!-- /.card-body-->
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card card-primary card-outline">
+                  <div class="card-header">
+                    <h3 class="card-title">
+                      <i class="far fa-chart-bar"></i>
+                      Phí vận chuyển
+                    </h3>
+                  </div>
+                  <canvas id="lineChart"></canvas>
+                  <!-- /.card-body-->
+                </div>
+              </div>
+            </div>
+            <!-- start bang du lieu -->
+            <div class="card">
+              <div class="card-header">
+                <div class="row">
+                  <h3 class="col-md-3 card-title">Trạng thái các lộ trình</h3>
+                  <div class="col-md-2"></div>
+                  <div class="col-md-7">
+                    <form>
+                      <div class="input-group">
+                          <input type="search" class="form-control form-control-lg">
+                          <div class="input-group-append">
+                              <button type="submit" class="btn btn-lg btn-default">
+                                  <i class="fa fa-search"></i>
+                              </button>
+                          </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-md-1"></div>
+                </div>
+              </div>
+              <div class="card-body p-0">
+                <table id="example1" class="table table-bordered table-striped projects">
+                  <thead>
+                    <tr>
+                      <th>STT</th>
+                      <th>Mã lộ trình</th>
+                      <th>Tài xế đảm nhận</th>
+                      <th>Tổng chi phí(đồng)</th>
+                      <th>Trạng thái</th>
+                      <th>Hành động</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>RHFNAFWE19</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                  <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                              <li class="list-inline-item">
+                                  <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>4.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-green" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                              </div>
+                          </div>
+                          <small>100% Complete</small>
+                      </td>
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>RHFNAFWE15</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                  <img alt="Avatar" class="table-avatar" src="../dist/img/avatar.png">
+                              </li>
+                              <li class="list-inline-item">
+                                  <img alt="Avatar" class="table-avatar" src="../dist/img/avatar2.png">
+                              </li>
+                              <li class="list-inline-item">
+                                  <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                              <li class="list-inline-item">
+                                  <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                            </li>
+                          </ul>
+                      </td>
+                      <td>1.010.981</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-green" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                              </div>
+                          </div>
+                          <small>0% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>RHFNAFWW16</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                            </li>
+                          </ul>
+                      </td>
+                      <td>1.800.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                              </div>
+                          </div>
+                          <small>50% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>RHFNAFWW17</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                              </div>
+                          </div>
+                          <small>70% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>RHFNAFWW18</td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar4.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar5.png">
+                              </li>
+                              <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="../dist/img/avatar3.png">
+                              </li>
+                          </ul>
+                      </td>
+                      <td>3.000.000</td>
+                      <td class="project_progress">
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              </div>
+                          </div>
+                          <small>80% Complete</small>
+                      </td>
+
+                      <td class="text-center">
+                          <a class="btn btn-info btn-sm" href="route-employee.html">
+                              Chi tiết
+                          </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+        </div>
+        <!-- end transportation -->
       </div>
       <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
-  <!-- Main Footer -->
-  <!-- <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.1.0
-    </div>
-  </footer> -->
 </div>
 <!-- ./wrapper -->
 
@@ -423,6 +1444,19 @@
 <!-- Bootstrap -->
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- overlayScrollbars -->
+<!-- DataTables  & Plugins -->
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../plugins/jszip/jszip.min.js"></script>
+<script src="../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.js"></script>
@@ -440,5 +1474,56 @@
 <script src="../dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../dist/js/pages/dashboard2.js"></script>
+
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      searching: false,
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+  });
+</script>
+<script type="text/javascript">
+  var ctxD = document.getElementById("doughnutChart").getContext('2d');
+  var myLineChart = new Chart(ctxD, {
+    type: 'doughnut',
+    data: {
+    labels: ["Chưa xử lý", "Đang giao", "Hoàn thành"],
+    datasets: [{
+    data: [20, 50, 30],
+    backgroundColor: ["#F7464A", "#46BFBD", "#FF9900"],
+    hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870"]
+    }]
+    },
+    options: {
+    responsive: true
+    }
+  });
+  //line
+  var ctxL = document.getElementById("lineChart").getContext('2d');
+  var myLineChart = new Chart(ctxL, {
+    type: 'line',
+    data: {
+      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      datasets: [{
+          label: "Đơn vị triệu đồng",
+          data: [65, 59, 70, 71, 56, 55, 65],
+          backgroundColor: [
+          '#FFFFFF',
+          ],
+          borderColor: [
+          '#00CCFF',
+          ],
+          borderWidth: 2,
+        },
+        ]
+    },
+    options: {
+
+      responsive: true
+    }
+  });
+</script>
 </body>
 </html>
